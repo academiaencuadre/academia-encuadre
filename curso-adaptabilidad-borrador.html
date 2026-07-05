@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrador — Adaptabilidad en Entornos Audiovisuales</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Georgia', serif; background: #fafafa; color: #1a1a1a; line-height: 1.8; }
+    .navbar { background: #0a0a0a; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .navbar a { color: #e63946; text-decoration: none; font-family: sans-serif; font-size: 0.85rem; font-weight: 600; }
+    .navbar span { font-family: sans-serif; font-size: 0.9rem; }
+    .borrador-banner { background: #fff3cd; border-bottom: 2px solid #ffc107; text-align: center; padding: 0.7rem; font-family: sans-serif; font-size: 0.88rem; color: #664d03; font-weight: 600; }
+    .hero { background: #0a0a0a; color: white; padding: 4rem 2rem; text-align: center; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1rem; }
+    .hero h1 em { color: #e63946; font-style: italic; }
+    .hero p { color: #9ca3af; font-size: 1.1rem; font-family: sans-serif; }
+    .hero .quote { font-size: 1.3rem; color: #d1d5db; margin-top: 2rem; font-style: italic; }
+    .contenido { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem; }
+    .modulo { margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 2px solid #e5e7eb; }
+    .modulo:last-child { border-bottom: none; }
+    .modulo-num { font-family: sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #e63946; margin-bottom: 0.5rem; }
+    .modulo h2 { font-size: 1.8rem; margin-bottom: 1.5rem; line-height: 1.3; }
+    .modulo h3 { font-size: 1.2rem; margin: 2rem 0 0.8rem; color: #1d3557; font-family: sans-serif; }
+    .modulo p { margin-bottom: 1.2rem; font-size: 1.05rem; color: #374151; }
+    .modulo ul { margin: 0.8rem 0 1.2rem 1.5rem; }
+    .modulo ul li { margin-bottom: 0.5rem; color: #374151; font-size: 1.05rem; }
+    .modulo strong { color: #0a0a0a; }
+    .highlight { background: #f0f4ff; border-left: 4px solid #1d3557; padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; font-style: italic; }
+    .cierre { background: #0a0a0a; color: white; padding: 3rem 2rem; text-align: center; }
+    .cierre h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+    .cierre p { color: #9ca3af; font-family: sans-serif; margin-bottom: 0.5rem; }
+    .cierre .frase-final { font-size: 1.3rem; color: white; font-style: italic; margin: 2rem 0; }
+    .indice { background: #f3f4f6; border-radius: 12px; padding: 2rem; margin-bottom: 3rem; font-family: sans-serif; }
+    .indice h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: #6b7280; margin-bottom: 1rem; }
+    .indice ol { margin-left: 1.2rem; }
+    .indice ol li { margin-bottom: 0.4rem; font-size: 0.95rem; color: #374151; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <span>Academia <strong style="color:#e63946">Encuadre</strong></span>
+  <a href="index.html">← Volver a la web</a>
+</nav>
+
+<div class="borrador-banner">⚠️ BORRADOR PARA REVISIÓN — Versión inicial para corrección del autor</div>
+
+<div class="hero">
+  <h1>Adaptabilidad en<br><em>Entornos Audiovisuales</em></h1>
+  <p>Academia Encuadre · Juan José Martín García</p>
+  <p class="quote">"La tecnología cambia. La cadena nunca cambia."</p>
+</div>
+
+<div class="contenido">
+
+  <div class="indice">
+    <h3>Índice de módulos</h3>
+    <ol start="0">
+      <li>La mentalidad del profesional adaptable</li>
+      <li>La cadena que nunca cambia</li>
+      <li>Redundancia: trabajar como profesional</li>
+      <li>El técnico que se basta solo</li>
+      <li>Imagen y luz: hacer más con menos</li>
+      <li>El sonido manda</li>
+      <li>Postproducción e imagen de marca</li>
+      <li>El realizador que sabe delegar</li>
+      <li>Integrar tecnologías nuevas en tu flujo</li>
+    </ol>
+  </div>
+
+  <div class="modulo">
+    <div class="modulo-num">Módulo 0</div>
+    <h2>La mentalidad del profesional adaptable</h2>
+    <p>Antes de hablar de cables, software o plataformas, necesito contarte algo que tardé años en entender y que nadie me enseñó en ningún curso.</p>
+    <p>Hay dos tipos de técnicos en este sector.</p>
+    <p>El primero entra en pánico cada vez que sale algo nuevo. Cada nueva plataforma, cada nuevo códec, cada nuevo protocolo le genera ansiedad. Siente que siempre va por detrás. Que nunca sabe suficiente. Que el sector avanza más rápido que él.</p>
+    <p>El segundo mira la novedad, la evalúa y decide si la integra o no. No corre detrás de cada novedad, pero tampoco se resiste al cambio. Simplemente tiene criterio. Y ese criterio es lo que le hace irremplazable.</p>
+    <p>Yo he trabajado con satélite, con microondas, con fibra óptica, con RDSI, con streaming por internet. Tecnologías completamente distintas. Hardware diferente. Software diferente. Nombres diferentes. Pero el trabajo era exactamente el mismo. Porque la cadena nunca cambia.</p>
+    <div class="highlight"><strong>Adaptarse no es saber usar la última herramienta. Es entender el principio detrás de cualquier herramienta.</strong></div>
+    <p>Este curso va de eso. No te voy a enseñar a usar un software concreto que en dos años estará obsoleto. Te voy a enseñar a entender cualquier tecnología que salga. A evaluarla. A integrarla en tu flujo sin que te rompa lo que ya funciona. Y a resolver problemas en tiempo real cuando las cosas fallen — porque van a fallar.</p>
+    <p>Bienvenido.</p>
+  </div>
+
+  <div class="modulo">
+    <div class="modulo-num">Módulo 1</div>
+    <h2>La cadena que nunca cambia</h2>
+    <p>Esto es lo más importante que vas a leer en todo el curso. Si entiendes esto, ya tienes el 50% del trabajo hecho.</p>
+    <p>Da igual si estás haciendo un enlace por satélite para una cadena de televisión, un streaming de un partido de fútbol por internet o una videoconferencia con otra universidad al otro lado del mundo. La cadena es siempre la misma:</p>
+    <div class="highlight"><strong>FUENTE → SEÑAL → CODIFICACIÓN → ENVÍO → RECEPCIÓN → DECODIFICACIÓN → PROYECCIÓN → PÚBLICO</strong></div>
+    <h3>FUENTE</h3>
+    <p>Es lo que quieres transmitir. Una cámara, un micrófono, una pantalla, un ordenador. La fuente genera la imagen y el sonido que vas a enviar.</p>
+    <h3>SEÑAL</h3>
+    <p>La fuente produce una señal. Puede ser analógica o digital, de vídeo o de audio. Esa señal tiene que ser limpia. Si la fuente es mala, todo lo demás da igual.</p>
+    <h3>CODIFICACIÓN</h3>
+    <p>La señal hay que convertirla a un formato que se pueda enviar. Un códec la comprime, la empaqueta y la prepara para el viaje. H.264, H.265, HEVC... los nombres cambian. El concepto no.</p>
+    <h3>ENVÍO</h3>
+    <p>La señal codificada viaja. Por satélite, por fibra, por microondas, por internet, por un cable HDMI. El medio cambia. El concepto no.</p>
+    <h3>RECEPCIÓN</h3>
+    <p>Al otro lado, alguien recibe la señal. Una antena parabólica, un router, un receptor de fibra, un ordenador. Si el envío fue bien, la señal llega. Si no, hay que diagnosticar en qué punto de la cadena se rompió.</p>
+    <h3>DECODIFICACIÓN</h3>
+    <p>La señal comprimida hay que descomprimirla para que se pueda ver y escuchar. El receptor hace el proceso inverso al codificador.</p>
+    <h3>PROYECCIÓN</h3>
+    <p>La señal decodificada llega a la pantalla, al altavoz, al monitor. El último paso técnico antes del público.</p>
+    <h3>PÚBLICO</h3>
+    <p>La persona que está al otro lado. El espectador. Para quien existe todo lo demás.</p>
+    <h3>Cómo usar esta cadena en la práctica</h3>
+    <p>Cuando algo falla en un directo — y va a fallar — lo primero que haces es recorrer la cadena de principio a fin. ¿La fuente está generando señal? ¿La señal llega al codificador? ¿El codificador está enviando? ¿La recepción está recibiendo? ¿El decodificador está funcionando? ¿La proyección está activa?</p>
+    <p>En cuanto encuentras dónde se rompe la cadena, sabes dónde está el problema. Y puedes empezar a resolverlo.</p>
+    <div class="highlight">Yo he resuelto una videoconferencia con Perú por teléfono, diciendo al técnico del otro lado qué tenía que mirar, en qué punto de la cadena estaba el fallo, sin ver nada de lo que tenía delante. Porque la cadena es la misma en Madrid que en Lima.</div>
+    <p><strong>Aprende la cadena. El resto viene solo.</strong></p>
+  </div>
+
+  <div class="modulo">
+    <div class="modulo-num">Módulo 2</div>
+    <h2>Redundancia: trabajar como profesional</h2>
+    <p>Cuando eres amateur, tienes una línea. Cuando eres profesional, siempre tienes dos.</p>
+    <p>Esta es la diferencia más importante entre alguien que hace streaming los fines de semana y alguien que cobra por ello. El amateur reza para que no falle nada. El profesional asume que algo va a fallar y lo tiene previsto.</p>
+    <div class="highlight"><strong>La regla es simple: todo duplicado.</strong> Una línea principal. Una línea de backup. Enviando en paralelo desde el primer segundo. No cuando falla la principal. Desde el principio.</p></div>
+    <p>Por eso también necesitas dos personas con roles claros:</p>
+    <p><strong>Operador en emisión:</strong> controla la señal que sale. Monitoriza la codificación, el ancho de banda, la calidad de imagen y sonido. Si la línea principal cae, activa el cambio a la línea de backup.</p>
+    <p><strong>Operador en recepción:</strong> controla lo que llega. Tiene las dos líneas entrando. Cuando el operador de emisión avisa, cambia la recepción a la línea de backup sin que el espectador note nada.</p>
+    <h3>El protocolo de fallo</h3>
+    <p>Antes de cada evento, tienes que tener claro:</p>
+    <ul>
+      <li>¿Qué pasa si cae la línea principal?</li>
+      <li>¿Quién toma la decisión de cambiar?</li>
+      <li>¿Cómo se comunica ese cambio?</li>
+      <li>¿Cuánto tiempo tienes para resolverlo antes de que el espectador lo note?</li>
+    </ul>
+    <div class="highlight"><strong>La diferencia entre un técnico caro y uno barato no es que al caro no le fallen las cosas. Es que cuando le fallan, las resuelve sin que nadie lo note.</strong></div>
+  </div>
+
+  <div class="modulo">
+    <div class="modulo-num">Módulo 3</div>
+    <h2>El técnico que se basta solo</h2>
+    <p>En un directo, no puedes llamar al técnico de soporte. No puedes esperar a que llegue alguien a arreglarlo. Tienes que resolverlo tú, ahora, mientras el evento sigue.</p>
+    <h3>Soldar con estaño</h3>
+    <p>Saber soldar un conector es una habilidad que parece del siglo pasado y que te va a sacar de más de un apuro. Un cable roto, un conector que se ha soltado, una soldadura fría que da interferencias intermitentes.</p>
+    <p><strong>XLR / Canon balanceado:</strong> el conector de audio profesional por excelencia. Tres pines: masa, señal positiva, señal negativa. El cable balanceado cancela el ruido en distancias largas.</p>
+    <p><strong>RCA:</strong> el conector de audio y vídeo doméstico. Dos pines: señal y masa. Menos robusto que el XLR, más fácil de soldar.</p>
+    <h3>Crimpado de RJ45 y RJ11</h3>
+    <p><strong>RJ45:</strong> el conector de red. Ocho hilos, orden específico (EIA/TIA 568B es el estándar). Un cable de red mal crimpado da problemas intermitentes que vuelven loco a cualquiera.</p>
+    <p><strong>RJ11:</strong> el conector de teléfono. Más pequeño, menos hilos. Todavía aparece en instalaciones antiguas y en algunas conexiones RDSI.</p>
+    <h3>BNC con cable de malla y vivo</h3>
+    <p>El BNC es el conector de vídeo profesional. El cable coaxial tiene dos conductores: el vivo (conductor central) y la malla (blindaje exterior). El vivo lleva la señal. La malla la protege de interferencias.</p>
+    <p>Al conectar un BNC hay que asegurarse de que el vivo no toca la malla. Un cortocircuito entre ambos y no hay señal.</p>
+    <h3>Lo que siempre llevas encima</h3>
+    <ul>
+      <li>Cables de repuesto de cada tipo que uses</li>
+      <li>Soldador de viaje (los hay de gas, sin enchufe)</li>
+      <li>Estaño, flux, cinta aislante</li>
+      <li>Comprobador de cables</li>
+      <li>Linterna (trabajarás en oscuridad)</li>
+      <li>Navaja o pelacables</li>
+    </ul>
+    <div class="highlight">Un técnico sin repuestos es un técnico que reza. No reces. Lleva repuestos.</div>
+  </div>
+
+  <div class="modulo">
+    <div class="modulo-num">Módulo 4</div>
+    <h2>Imagen y luz: hacer más con menos</h2>
+    <p>La mejor luz es la que no pagas, no pesas y no transportas. La luz natural.</p>
+    <h3>La luz natural como fuente principal</h3>
+    <p>Una ventana al norte da luz constante y difusa todo el día. Una al este da luz directa por la mañana. Coloca al sujeto con la ventana lateral — esa posición da más volumen y definición al rostro.</p>
+    <h3>Rebotes y relleno improvisado</h3>
+    <p>La luz lateral crea sombra en el lado opuesto. Para suavizarla: una cartulina blanca, un panel de foam, una pared blanca cercana o un reflector plegable (menos de 15 euros). Con una ventana y un reflector tienes iluminación de dos puntos completamente gratuita.</p>
+    <h3>Temperatura de color</h3>
+    <p>Si mezclas fuentes de distinta temperatura de color sin compensar, la imagen queda extraña. Ajusta el balance de blancos de la cámara para la fuente dominante.</p>
+    <h3>Iluminación escénica</h3>
+    <p>Los dimmers controlan la intensidad de cada grupo de focos. La mesa de luces controla los dimmers. El cableado va desde cada foco hasta el dimmer, y del dimmer a la mesa — es cableado de potencia, hay que respetarlo.</p>
+    <p>Hoy existen aplicaciones que permiten controlar los dimmers desde un ordenador, emulando una mesa de luz física. Son útiles para instalaciones temporales.</p>
+    <div class="highlight">Anular las señales de móvil en sala durante la representación evita interferencias de radiofrecuencia que se cuelan en los micrófonos inalámbricos. Una función arruinada por un zumbido que nadie sabe de dónde viene.</div>
+  </div>
+
+  <div class="modulo">
+    <div class="modulo-num">Módulo 5</div>
+    <h2>El sonido manda</h2>
+    <div class="highlight" style="font-size:1.2rem"><strong>El audio es el 75% del enganche del público.</strong></div>
+    <p>Una imagen mediocre la gente aguanta. Un audio malo, no. La gente se va. Inmediatamente. No importa lo buena que sea la imagen. No importa lo interesante que sea el contenido.</p>
+    <h3>Micrófonos: cuál usar en cada situación</h3>
+    <p><strong>Micrófono de solapa (lavalier):</strong> para presentadores y entrevistados. Discreto y práctico. Sensible a los roces — colócalo bien y asegúralo con cinta.</p>
+    <p><strong>Micrófono de cañón (shotgun):</strong> muy direccional, solo recoge lo que está delante. Ideal para exteriores con ruido ambiente.</p>
+    <p><strong>Micrófono de ambiente:</strong> para capturar el sonido de un espacio completo. Útil para eventos con público, música en directo.</p>
+    <h3>Ganancia, ruido de fondo y eco</h3>
+    <p><strong>Ganancia:</strong> ajusta para que los picos lleguen aproximadamente a -12dB, dejando margen para los momentos más altos.</p>
+    <p><strong>Ruido de fondo:</strong> antes de grabar, escucha con auriculares 30 segundos sin que nadie hable. Lo que escuchas es lo que va a estar en toda la grabación.</p>
+    <p><strong>Eco:</strong> acerca el micrófono a la fuente y cambia su posición si el espacio rebota mucho.</p>
+    <h3>Monitorizar siempre con auriculares</h3>
+    <div class="highlight">Nunca confíes en los altavoces para monitorizar el audio que estás grabando o emitiendo. Los auriculares cerrados te dicen exactamente lo que está entrando en el sistema. Ponlos desde el principio. Nunca los quites durante el directo.</div>
+    <h3>Interferencias de radiofrecuencia</h3>
+    <p>Los sistemas de audio inalámbrico pueden sufrir interferencias de los móviles del público. Solución: elegir frecuencias alejadas de las bandas de móvil, pedir al público que apague o ponga en modo avión, y en espacios controlados considerar inhibidores de frecuencia.</p>
+  </div>
+
+  <div class="modulo">
+    <div class="modulo-num">Módulo 6</div>
+    <h2>Postproducción e imagen de marca</h2>
+    <h3>Subtítulos: alcance, no solo accesibilidad</h3>
+    <p>El 85% de los vídeos en redes sociales se ven sin sonido. Si no tienes subtítulos, pierdes el 85% de tu audiencia potencial en el móvil. Y si tienes subtítulos en varios idiomas, multiplicas tu alcance sin esfuerzo adicional.</p>
+    <div class="highlight">Un canal sin subtítulos en 2025 es como un canal sin imagen en 1990.</div>
+    <h3>Rótulos: identidad visual</h3>
+    <p>Los rótulos son los elementos gráficos sobreimpresos en el vídeo: nombre del presentador, cargo, lugar, fecha. Su función no es solo informativa — es de marca. Cuando tus rótulos tienen siempre la misma tipografía, color y posición, el espectador los reconoce sin leerlos.</p>
+    <ul>
+      <li>Una tipografía para todo. Dos como máximo.</li>
+      <li>Color de marca consistente en todos los vídeos.</li>
+      <li>Posición fija. El nombre siempre en el mismo lugar.</li>
+      <li>Animación sencilla. La complejidad no es profesionalismo.</li>
+    </ul>
+    <h3>Lower thirds, intro y outro</h3>
+    <p><strong>Lower third:</strong> rótulo en el tercio inferior con nombre y cargo. El elemento más visto y más identificativo.</p>
+    <p><strong>Intro:</strong> los primeros 3-5 segundos. Tu logo, tu música, tu identidad. El espectador aprende a reconocerte por la intro.</p>
+    <p><strong>Outro:</strong> el cierre. Dónde dirigir al espectador después del vídeo. No dejes que acabe sin que sepa qué hacer.</p>
+    <h3>La música como marca</h3>
+    <p>La música de cabecera es tan identificativa como el logo. A veces más. Elige una música que represente tu estilo y úsala siempre. Usa música libre de derechos — no uses música comercial.</p>
+  </div>
+
+  <div class="modulo">
+    <div class="modulo-num">Módulo 7</div>
+    <h2>El realizador que sabe delegar</h2>
+    <p>El mejor realizador no es el que más sabe. Es el que mejor elige a su equipo y sabe qué hacer con cada persona.</p>
+    <h3>Saber lo suficiente de todo</h3>
+    <p>Para dirigir bien necesitas entender lo que hace cada miembro de tu equipo. No para hacerlo tú mejor que ellos — sino para saber lo que necesitas contratar, evaluar si lo están haciendo bien y comunicarte con ellos en su lenguaje.</p>
+    <h3>Contratar a alguien mejor que tú</h3>
+    <p>La regla es esta: <strong>contrata a alguien que sepa más que tú en su especialidad.</strong> No para decirle lo que tiene que hacer. Sino para que él te diga lo que necesitas. El mejor director de fotografía que puedas permitirte te va a dar ideas que tú no tendrías.</p>
+    <div class="highlight">Tu trabajo como realizador es elegir bien, darles el contexto que necesitan y confiar en ellos.</div>
+    <h3>Pedir ayuda a tiempo</h3>
+    <p>En un directo, el orgullo cuesta caro. Si no sabes algo, pregunta antes de que sea un problema. El técnico que nunca pide ayuda improvisa en silencio mientras el evento se desmorona. El que pide ayuda a tiempo saca adelante el directo.</p>
+    <h3>El arco del streamer que crece</h3>
+    <ul>
+      <li>Empieza solo, hace todo</li>
+      <li>Crece, se complica</li>
+      <li>Invierte, delega</li>
+      <li>Dirige, no ejecuta</li>
+    </ul>
+    <div class="highlight"><strong>El realizador que respeta a su equipo siempre tiene equipo disponible. El que no respeta, siempre está buscando.</strong></div>
+  </div>
+
+  <div class="modulo">
+    <div class="modulo-num">Módulo 8</div>
+    <h2>Integrar tecnologías nuevas en tu flujo</h2>
+    <h3>La pregunta que debes hacerte ante cualquier novedad</h3>
+    <div class="highlight"><strong>¿En qué punto de la cadena mejora esto lo que ya tengo?</strong> Si la respuesta es clara y la mejora es real, lo integras. Si la respuesta es vaga o la mejora es marginal, lo dejas pasar.</div>
+    <h3>Cómo integrar sin romper</h3>
+    <p>Cuando decides incorporar algo nuevo, no lo hagas en un directo importante. Pruébalo en condiciones controladas. Entiende cómo falla. Aprende qué hacer cuando falla. Luego intégralo en proyectos pequeños. Cuando confías en él, inclúyelo en tu flujo habitual.</p>
+    <h3>La IA como herramienta de trabajo</h3>
+    <p>Subtítulos automáticos en tiempo real. Traducción a múltiples idiomas. Eliminación de ruido de fondo. Mejora de imagen. Generación de rótulos. Todo esto ya existe, ya es accesible y ya es barato.</p>
+    <p>El técnico que ignore la IA va a quedar desfasado. El que la use sin criterio cometerá errores. El que la integre bien — entendiendo qué hace bien y qué hace mal — hará más trabajo, en menos tiempo, con más calidad.</p>
+    <h3>El flujo que nunca dejas de revisar</h3>
+    <p>Una vez al año, recorre tu flujo de principio a fin. ¿Hay algo que haces por costumbre pero que ya no añade valor? ¿Hay algo nuevo que podría mejorar un paso concreto? El flujo que revisas es el flujo que mejora.</p>
+  </div>
+
+</div>
+
+<div class="cierre">
+  <h2>Lo que te llevas de este curso</h2>
+  <p>Has aprendido que la cadena de transmisión nunca cambia. Que el profesional trabaja siempre con redundancia. Que saber hacer las cosas con las manos marca la diferencia. Que la luz natural es tu mejor aliada. Que el audio es el 75% del enganche. Que los subtítulos son alcance. Que delegar es una habilidad, no una debilidad. Y que integrar lo nuevo con criterio es lo que te mantiene relevante.</p>
+  <p class="frase-final">"Entiende los principios. El resto se adapta solo."</p>
+  <p>Academia Encuadre · Juan José Martín García</p>
+  <p>academiaencuadre@gmail.com · @academiaencuadre en TikTok</p>
+</div>
+
+</body>
+</html>
