@@ -577,6 +577,178 @@
 
 </div>
 
+  <hr>
+
+  <!-- MÓDULO 9 — SEÑAL DE AUDIO Y VÍDEO POR LA CADENA TÉCNICA -->
+  <div class="modulo">
+    <div class="modulo-num">Módulo 9</div>
+    <h2>La señal por dentro: audio, vídeo y su recorrido técnico</h2>
+    <p>Cuando haces una producción profesional, el audio y el vídeo viajan por caminos separados. Se mezclan. Y al final se juntan en el codificador para salir como una sola señal.</p>
+    <p>Entender ese recorrido es lo que te permite diagnosticar cualquier fallo.</p>
+
+    <h3>La señal de audio — del micro a la mesa</h3>
+    <p>El micrófono genera una señal eléctrica muy débil. Esa señal necesita ser amplificada antes de poder trabajar con ella.</p>
+    <p>El primer paso es el previo de micrófono — el preamplificador. Sin él, la señal es demasiado débil. Con él, la señal sube al nivel de línea, que es el nivel estándar de trabajo en toda la cadena profesional.</p>
+    <p>Desde el previo, la señal de audio viaja por cable hacia la mesa de sonido. En un montaje profesional, ese cable es XLR balanceado. El balanceado viaja con dos copias de la señal en fase invertida. El ruido que se cuela en el camino llega a las dos copias por igual. En la mesa, el circuito suma una copia con la inversa de la otra — el ruido se cancela, la señal se refuerza.</p>
+    <p>Eso es el rechazo de modo común. Esa es la razón de existir del cable balanceado. Un cable XLR de 50 metros con este sistema llega limpio. Un cable RCA no balanceado de 10 metros puede llegar con zumbido.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Recorrido de la señal de audio</div>
+      <div class="cadena-visual">
+        <div class="cadena-nodo rojo">🎙️<br>Micro</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">⚡<br>Previo</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo azul">🎚️<br>Mesa<br>sonido</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">📊<br>Compresor/<br>EQ</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo rojo">🗜️<br>Codificador</div>
+      </div>
+    </div>
+
+    <p>En la mesa de sonido controlas los niveles de cada canal, ecualización, panorámica y mezcla. La salida de la mesa va al codificador — en formato analógico por XLR o RCA, o en digital por AES/EBU o USB.</p>
+
+    <h3>La señal de vídeo — de la cámara a la mesa</h3>
+    <p>La cámara genera la señal de vídeo. En producción profesional esa señal sale por BNC en formato SDI — Serial Digital Interface. El SDI lleva vídeo sin comprimir a largas distancias con total fiabilidad. Es el estándar del broadcast.</p>
+    <p>La señal SDI entra en la mesa de vídeo — el mezclador. Ahí es donde el realizador elige qué cámara está en aire, hace las transiciones, incorpora los gráficos, los rótulos y los vídeos preparados. La salida del mezclador va al codificador.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Recorrido de la señal de vídeo</div>
+      <div class="cadena-visual">
+        <div class="cadena-nodo rojo">📷<br>Cámara</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">🔌<br>BNC/SDI<br>o HDMI</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo azul">🎬<br>Mesa<br>vídeo</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">🖥️<br>Monitor<br>retorno</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo rojo">🗜️<br>Codificador</div>
+      </div>
+    </div>
+
+    <h3>Dónde se juntan audio y vídeo</h3>
+    <p>El codificador es el punto donde las dos señales — audio y vídeo — se fusionan en una sola.</p>
+    <p>Recibe la salida de la mesa de sonido por un lado. Recibe la salida de la mesa de vídeo por otro. Las combina, las comprime con el códec elegido — H.264, H.265, lo que sea — y genera el stream que viaja hacia el servidor o hacia la recepción.</p>
+    <p>Si el audio llega tarde al codificador con respecto al vídeo, tienes labios desincronizados. Si el vídeo llega con ruido, el codificador no puede limpiarlo. Lo que entra en el codificador es lo que sale. Basura entra, basura sale.</p>
+    <div class="destacado">Por eso tienes que controlar la señal en cada punto de la cadena, no solo al final. Un monitor de retorno en cada etapa te dice dónde se introduce el problema.</div>
+
+    <h3>HDMI — el conector que lo cambió todo</h3>
+    <p>El HDMI apareció para el consumo doméstico y acabó siendo imprescindible en producción. Lleva vídeo y audio en un solo cable. Es fácil de conectar. Y está en absolutamente todo.</p>
+    <p>Sus limitaciones son conocidas: longitud máxima recomendada de 5 a 10 metros sin amplificador, sensible a los conectores sueltos, no tiene bloqueo mecánico como el BNC. Un cable HDMI que se desconecta a mitad de un directo es un problema clásico.</p>
+    <p>Soluciones profesionales: extender con fibra óptica o con adaptadores HDBaseT que llevan la señal HDMI por cable de red hasta 100 metros. Para instalaciones fijas, siempre SDI. Para situaciones donde necesitas comodidad y distancias cortas, HDMI con buena fijación mecánica.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Comparativa de conectores de vídeo</div>
+      <div class="kit-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="kit-item">
+          <div class="kit-icon">📺</div>
+          <div class="kit-nombre">BNC / SDI</div>
+          <p style="font-size:0.75rem;color:#6b7280;margin-top:0.3rem;line-height:1.4;">Broadcast. Larga distancia. Con bloqueo. Estándar profesional.</p>
+        </div>
+        <div class="kit-item">
+          <div class="kit-icon">🔷</div>
+          <div class="kit-nombre">HDMI</div>
+          <p style="font-size:0.75rem;color:#6b7280;margin-top:0.3rem;line-height:1.4;">Universal. Audio+vídeo. Distancia corta. Sin bloqueo mecánico.</p>
+        </div>
+        <div class="kit-item">
+          <div class="kit-icon">⚡</div>
+          <div class="kit-nombre">DisplayPort / USB-C</div>
+          <p style="font-size:0.75rem;color:#6b7280;margin-top:0.3rem;line-height:1.4;">Ordenadores y monitores. Alta resolución. Cada vez más común.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- MÓDULO 10 — VÍDEO PREPARADO PARA EL DIRECTO -->
+  <div class="modulo">
+    <div class="modulo-num">Módulo 10</div>
+    <h2>El vídeo preparado: más que una presentación</h2>
+    <p>Llevar vídeos preparados para un directo es una herramienta que muy poca gente aprovecha bien.</p>
+    <p>No se trata solo de tener las diapositivas de presentación. Se trata de tener piezas audiovisuales postproducidas que enriquecen el directo, dan contexto, cambian el ritmo y demuestran nivel de producción.</p>
+
+    <h3>Tipos de vídeo que puedes llevar preparados</h3>
+    <p><strong>El vídeo de contexto.</strong> Si estás entrevistando a alguien sobre un tema concreto, un vídeo de 30 segundos con imágenes de recurso sobre ese tema — antes de la entrevista o durante una pausa — sitúa al espectador y eleva la producción.</p>
+    <p><strong>El total postproducido.</strong> Una declaración de alguien, ya editada, con su rótulo, con su música de entrada, lista para emitir en el momento exacto que decides. No improvisas. Lo tienes preparado.</p>
+    <p><strong>El vídeo de relleno.</strong> Para transiciones, cambios de sección, mientras preparas el siguiente bloque. Una secuencia de imágenes con música que mantiene al espectador enganchado y te da tiempo a organizar lo siguiente.</p>
+    <p><strong>La cabecera.strong> Tu intro de programa. Con tu música, tu logo, tu identidad. Empieza siempre igual. El espectador lo aprende. Se convierte en una señal pavloviana: cuando escucha tu música, sabe que empieza tu contenido.</p>
+
+    <h3>Cómo se integra en el directo</h3>
+    <p>En la mesa de vídeo, los vídeos preparados entran como una fuente más. Una entrada de reproducción — un ordenador, un reproductor de media — conectada a la mesa igual que una cámara. Cuando decides lanzarlo, el operador de vídeo lo reproduce y el realizador hace el corte en la mesa.</p>
+    <p>El espectador ve el vídeo postproducido. No sabe que acabas de ganar un minuto para organizar el siguiente bloque en plató.</p>
+    <div class="destacado">Un directo bien preparado no es el que improvisa mejor. Es el que tiene preparado tanto que casi no necesita improvisar.</div>
+
+    <h3>La estructura de montaje de noticias: el esqueleto</h3>
+    <p>Esta es la estructura profesional que han usado todas las televisiones del mundo durante décadas. Y sigue siendo la más eficaz.</p>
+    <p>Cuando montas una pieza de vídeo para televisión o para contenido de calidad, no empiezas por las imágenes. Empiezas por el sonido.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">El esqueleto de montaje — orden de trabajo</div>
+      <svg viewBox="0 0 500 220" style="width:100%;display:block;">
+        <!-- Paso 1 -->
+        <rect x="10" y="10" width="140" height="50" fill="#1d3557" rx="6"/>
+        <text x="80" y="32" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">1. VOZ EN OFF</text>
+        <text x="80" y="48" font-family="sans-serif" font-size="9" fill="#93c5fd" text-anchor="middle">La locución. El esqueleto.</text>
+        <!-- flecha -->
+        <text x="155" y="40" font-size="16" fill="#9ca3af">→</text>
+        <!-- Paso 2 -->
+        <rect x="170" y="10" width="140" height="50" fill="#1d3557" rx="6"/>
+        <text x="240" y="32" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">2. TOTALES</text>
+        <text x="240" y="48" font-family="sans-serif" font-size="9" fill="#93c5fd" text-anchor="middle">Declaraciones con sonido</text>
+        <!-- flecha -->
+        <text x="315" y="40" font-size="16" fill="#9ca3af">→</text>
+        <!-- Paso 3 -->
+        <rect x="330" y="10" width="160" height="50" fill="#e63946" rx="6"/>
+        <text x="410" y="32" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">3. PLANOS RECURSO</text>
+        <text x="410" y="48" font-family="sans-serif" font-size="9" fill="#fecaca" text-anchor="middle">Imágenes sobre la voz</text>
+
+        <!-- Segunda fila — estructura timeline -->
+        <text x="10" y="95" font-family="sans-serif" font-size="9" fill="#6b7280" font-weight="700">TIMELINE:</text>
+        <!-- Voz en off -->
+        <rect x="10" y="105" width="480" height="22" fill="#dbeafe" rx="3"/>
+        <text x="15" y="121" font-family="sans-serif" font-size="9" fill="#1d3557" font-weight="700">🎙️ VOZ EN OFF — "Hoy en el ayuntamiento de Madrid se celebró..."</text>
+        <!-- Total -->
+        <rect x="180" y="132" width="120" height="22" fill="#fef3c7" rx="3" stroke="#f59e0b" stroke-width="1"/>
+        <text x="185" y="148" font-family="sans-serif" font-size="9" fill="#92400e" font-weight="700">🎤 TOTAL — Alcalde habla</text>
+        <!-- Más voz -->
+        <rect x="305" y="132" width="185" height="22" fill="#dbeafe" rx="3"/>
+        <text x="310" y="148" font-family="sans-serif" font-size="9" fill="#1d3557" font-weight="700">🎙️ Continúa voz en off...</text>
+        <!-- Planos recurso -->
+        <rect x="10" y="159" width="175" height="22" fill="#dcfce7" rx="3" stroke="#4caf50" stroke-width="1"/>
+        <text x="15" y="175" font-family="sans-serif" font-size="9" fill="#166534">📷 Planos recurso: fachada ayuntamiento</text>
+        <rect x="305" y="159" width="185" height="22" fill="#dcfce7" rx="3" stroke="#4caf50" stroke-width="1"/>
+        <text x="310" y="175" font-family="sans-serif" font-size="9" fill="#166534">📷 Planos recurso: sala plenos</text>
+        <!-- Leyenda -->
+        <rect x="10" y="195" width="12" height="12" fill="#dbeafe" stroke="#1d3557" stroke-width="1" rx="2"/>
+        <text x="26" y="206" font-family="sans-serif" font-size="8" fill="#6b7280">Voz en off</text>
+        <rect x="100" y="195" width="12" height="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="2"/>
+        <text x="116" y="206" font-family="sans-serif" font-size="8" fill="#6b7280">Total (declaración)</text>
+        <rect x="230" y="195" width="12" height="12" fill="#dcfce7" stroke="#4caf50" stroke-width="1" rx="2"/>
+        <text x="246" y="206" font-family="sans-serif" font-size="8" fill="#6b7280">Planos recurso</text>
+      </svg>
+    </div>
+
+    <h3>Los pasos en detalle</h3>
+    <p><strong>Paso 1 — La voz en off.</strong> Es el esqueleto. Lo primero que montas. La locución que narra la historia. Sin imágenes todavía. Solo la voz. Escúchala entera. Comprueba que tiene sentido, que el ritmo es correcto, que la información está en orden.</p>
+    <p><strong>Paso 2 — Los totales.</strong> Las declaraciones de los protagonistas. Van en el sitio exacto de la voz en off donde tiene sentido que aparezcan. Cuando el total tiene imagen — la persona hablando — esa imagen y ese sonido van juntos, son inseparables. Se colocan en el esqueleto como una sola pieza.</p>
+    <p><strong>Paso 3 — Los planos recurso.</strong> Ahora sí las imágenes. Vas rellenando la voz en off con planos que tengan relación con lo que se está diciendo. No cualquier plano — planos que ilustren, que añadan información, que mantengan el ritmo.</p>
+    <p>Si la voz dice "el alcalde presentó el presupuesto", el plano recurso es el alcalde en sala, el documento, la sala de plenos. No una calle aleatoria.</p>
+    <div class="destacado">Lo primero siempre es el sonido. La voz. Los totales. El vídeo es la capa que se añade encima. Nunca al revés.</div>
+
+    <h3>El plano recurso — criterios</h3>
+    <p>Un buen plano recurso no es el que está disponible. Es el que añade información o refuerza lo que dice la voz.</p>
+    <ul>
+      <li>Tiene que tener relación directa con el contenido de la voz en ese momento</li>
+      <li>Tiene que tener suficiente duración — mínimo 3 segundos, normalmente 5 o más</li>
+      <li>No puede repetirse en la misma pieza salvo que haya una razón</li>
+      <li>Tiene que tener buena exposición y foco — un plano técnicamente malo llama la atención por las razones equivocadas</li>
+    </ul>
+    <p>Cuando no tienes planos recurso suficientes, usas infografías, texto en pantalla, o amplías el total si lo tienes. Nunca dejes negro. Nunca dejes la voz sin imagen.</p>
+  </div>
+
 <!-- CIERRE -->
 <div class="contenido">
   <div class="cierre">
