@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://academiaencuadre.com/sitemap.xml
