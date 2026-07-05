@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan José Martín García — Técnico Audiovisual</title>
+  <meta name="description" content="Currículum de Juan José Martín García. Técnico audiovisual con más de 20 años de experiencia en televisión, streaming, eventos en directo y videoconferencia.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --negro: #0a0a0a;
+      --blanco: #ffffff;
+      --gris: #6b7280;
+      --gris-claro: #f3f4f6;
+      --acento: #e63946;
+      --acento2: #1d3557;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--blanco);
+      color: var(--negro);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 100;
+      padding: 1rem 0;
+    }
+    .navbar .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .logo {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--negro);
+    }
+    .navbar .logo span { color: var(--acento); }
+    .btn-back {
+      background: var(--negro);
+      color: var(--blanco);
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-back:hover { background: var(--acento); }
+
+    /* HERO */
+    .hero {
+      background: var(--negro);
+      color: var(--blanco);
+      padding: 5rem 1.5rem 4rem;
+    }
+    .hero .container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--acento);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: #a8b4c0;
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #9ca3af;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+    .hero-contacto {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .hero-contacto a {
+      color: #9ca3af;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .hero-contacto a:hover { color: white; }
+    .hero-foto {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #1f2937;
+    }
+
+    /* CONTENIDO */
+    .cv-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* SECCIONES */
+    .seccion { margin-bottom: 3.5rem; }
+    .seccion-titulo {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--acento);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--acento);
+      display: inline-block;
+    }
+
+    /* EXPERIENCIA */
+    .trabajo {
+      margin-bottom: 2.2rem;
+      padding-bottom: 2.2rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .trabajo:last-child { border-bottom: none; }
+    .trabajo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .trabajo-empresa {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--negro);
+    }
+    .trabajo-fecha {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--blanco);
+      background: var(--acento2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .trabajo-rol {
+      font-size: 0.9rem;
+      color: var(--gris);
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+    }
+    .trabajo-desc {
+      font-size: 0.92rem;
+      color: #374151;
+      line-height: 1.7;
+    }
+    .trabajo-desc ul {
+      list-style: none;
+      padding: 0;
+    }
+    .trabajo-desc ul li {
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.3rem;
+    }
+    .trabajo-desc ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--acento);
+      font-size: 0.8rem;
+      top: 0.1rem;
+    }
+
+    /* SIDEBAR */
+    .sidebar {}
+    .sidebar-card {
+      background: var(--gris-claro);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .sidebar-card .seccion-titulo { margin-bottom: 1rem; }
+
+    .skill-tag {
+      display: inline-block;
+      background: white;
+      border: 1px solid #d1d5db;
+      color: var(--negro);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      margin: 0.2rem;
+    }
+    .skill-tag.destacado {
+      background: var(--acento);
+      border-color: var(--acento);
+      color: white;
+    }
+
+    .formacion-item {
+      margin-bottom: 1rem;
+    }
+    .formacion-item strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .formacion-item span {
+      font-size: 0.82rem;
+      color: var(--gris);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--negro);
+      color: #9ca3af;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--acento); }
+
+    /* RESPONSIVE */
+    @media (max-width: 680px) {
+      .hero .container { grid-template-columns: 1fr; }
+      .hero-foto { width: 100px; height: 100px; }
+      .cv-body { grid-template-columns: 1fr; gap: 0; }
+      .sidebar { order: -1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">Academia <span>Encuadre</span></div>
+      <a href="index.html" class="btn-back">← Volver a la Academia</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="hero-badge">Currículum Vitae</span>
+        <h1>Juan José<br><em>Martín García</em></h1>
+        <p class="hero-subtitle">Técnico audiovisual con más de 20 años de experiencia en televisión, streaming en directo, eventos y videoconferencia.</p>
+        <div class="hero-contacto">
+          <a href="mailto:academiaencuadre@gmail.com">📧 academiaencuadre@gmail.com</a>
+          <a href="index.html">🎓 Academia Encuadre</a>
+        </div>
+      </div>
+      <img src="juanjose.jpg" alt="Juan José Martín García" class="hero-foto">
+    </div>
+  </section>
+
+  <!-- CUERPO -->
+  <div class="cv-body">
+
+    <!-- COLUMNA PRINCIPAL -->
+    <main>
+
+      <!-- EXPERIENCIA -->
+      <section class="seccion">
+        <div class="seccion-titulo">Experiencia profesional</div>
+
+        <div class="trabajo">
+          <div class="trabajo-header">
+            <span class="trabajo-empresa">Academia Encuadre</span>
+            <span class="trabajo-fecha">2024 — Presente</span>
+          </div>
+          <div class="trabajo-rol">Fundador y formador audiovisual</div>
+          <div class="trabajo-desc">
+            <ul>
+              <li>Creación y desarrollo de cursos de streaming profesional, lenguaje visual y producción audiovisual.</li>
+              <li>Formación orientada a profesionales que quieren dar el salto al mundo del directo y los eventos en vivo.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="trabajo">
+          <div class="trabajo-header">
+            <span class="trabajo-empresa">UNED</span>
+            <span class="trabajo-fecha">~5 años</span>
+          </div>
+          <div class="trabajo-rol">Técnico audiovisual — Videoconferencia y Streaming</div>
+          <div class="trabajo-desc">
+            <ul>
+              <li>Emisión en directo de ponencias, cursos y actos institucionales con retorno interactivo.</li>
+              <li>Modernización integral de los controles de realización: nueva mesa de sonido, mesa de vídeo, cámaras remotas con control de 3 ejes y racks completos de señal.</li>
+              <li>Coordinación técnica de las videoconferencias entre todas las facultades de la UNED en España.</li>
+              <li>Resolución remota de incidencias críticas en la universidad hermana de Perú, permitiendo sacar adelante la conexión en directo.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="trabajo">
+          <div class="trabajo-header">
+            <span class="trabajo-empresa">Galia 2000 — Pretevisión</span>
+            <span class="trabajo-fecha">~5 años</span>
+          </div>
+          <div class="trabajo-rol">Técnico de enlaces — Satélite, Microondas, Fibra y RDSI</div>
+          <div class="trabajo-desc">
+            <ul>
+              <li>Transmisión de eventos por toda España y Europa para las principales cadenas: Telemadrid, Canal Nou, Andalucía Directo y otras.</li>
+              <li>Cobertura de grandes eventos: fútbol, Vuelta Ciclista a España, elecciones, actos institucionales.</li>
+              <li>Cobertura de la visita del Presidente de los Estados Unidos en Madrid — 5 días en el Hotel Miguel Ángel con streaming prácticamente ininterrumpido durante 24 horas.</li>
+              <li>Dominio de tecnologías de transmisión: satélite, microondas, fibra óptica y RDSI.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="trabajo">
+          <div class="trabajo-header">
+            <span class="trabajo-empresa">Teatro Nacional de España (CDN)</span>
+            <span class="trabajo-fecha">Período contractual</span>
+          </div>
+          <div class="trabajo-rol">Técnico de sala — Teatro Pavón</div>
+          <div class="trabajo-desc">
+            <ul>
+              <li>Apoyo técnico durante las funciones del CDN mientras el Teatro Príncipe estaba en obras, desarrolladas en el Teatro Pavón.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="trabajo">
+          <div class="trabajo-header">
+            <span class="trabajo-empresa">Festival de Teatro Clásico de Almagro</span>
+            <span class="trabajo-fecha">Temporada festival</span>
+          </div>
+          <div class="trabajo-rol">Eléctrico y Tramoyista</div>
+          <div class="trabajo-desc">
+            <ul>
+              <li>Montaje y operación técnica en uno de los festivales de teatro más importantes de España.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="trabajo">
+          <div class="trabajo-header">
+            <span class="trabajo-empresa">Agencia EFE — Telemadrid</span>
+            <span class="trabajo-fecha">Inicio de carrera</span>
+          </div>
+          <div class="trabajo-rol">Operador de vídeo, cámara, sonido y postproducción</div>
+          <div class="trabajo-desc">
+            <ul>
+              <li>Operador de vídeo y continuidad para la Agencia EFE.</li>
+              <li>Trabajo por obra para Telemadrid como operador de cámara, sonido y postproducción ABEKAS.</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-card">
+        <div class="seccion-titulo">Habilidades técnicas</div>
+        <span class="skill-tag destacado">Streaming en directo</span>
+        <span class="skill-tag destacado">Realización audiovisual</span>
+        <span class="skill-tag destacado">Videoconferencia</span>
+        <span class="skill-tag">Operador de cámara</span>
+        <span class="skill-tag">Operador de sonido</span>
+        <span class="skill-tag">Postproducción ABEKAS</span>
+        <span class="skill-tag">Satélite / Microondas</span>
+        <span class="skill-tag">Fibra óptica</span>
+        <span class="skill-tag">RDSI</span>
+        <span class="skill-tag">Cámaras remotas (3 ejes)</span>
+        <span class="skill-tag">Mesas de vídeo</span>
+        <span class="skill-tag">Mesas de sonido</span>
+        <span class="skill-tag">Racks y cableado AV</span>
+        <span class="skill-tag">Producción de eventos</span>
+        <span class="skill-tag">Directo televisivo</span>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="seccion-titulo">Formación</div>
+        <div class="formacion-item">
+          <strong>Realización Audiovisual</strong>
+          <span>CEV — Centro de Estudios de Imagen y Vídeo, Madrid</span>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="seccion-titulo">Sectores</div>
+        <span class="skill-tag">Televisión</span>
+        <span class="skill-tag">Streaming</span>
+        <span class="skill-tag">Educación</span>
+        <span class="skill-tag">Artes escénicas</span>
+        <span class="skill-tag">Deporte en directo</span>
+        <span class="skill-tag">Eventos corporativos</span>
+        <span class="skill-tag">Periodismo</span>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="seccion-titulo">Contacto</div>
+        <p style="font-size:0.88rem; color:#374151; margin-bottom:0.8rem;">¿Tienes un proyecto audiovisual? Hablamos.</p>
+        <a href="mailto:academiaencuadre@gmail.com" style="display:block; background:var(--acento); color:white; text-align:center; padding:0.7rem; border-radius:8px; font-weight:600; font-size:0.88rem;">Enviar email</a>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Juan José Martín García · <a href="mailto:academiaencuadre@gmail.com">academiaencuadre@gmail.com</a> · <a href="index.html">Academia Encuadre</a></p>
+  </footer>
+
+</body>
+</html>
