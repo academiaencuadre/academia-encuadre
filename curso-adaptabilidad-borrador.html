@@ -3,260 +3,809 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Borrador — Adaptabilidad en Entornos Audiovisuales</title>
+  <title>REVISIÓN FINAL — Adaptabilidad en Entornos Audiovisuales</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Georgia', serif; background: #fafafa; color: #1a1a1a; line-height: 1.8; }
-    .navbar { background: #0a0a0a; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-    .navbar a { color: #e63946; text-decoration: none; font-family: sans-serif; font-size: 0.85rem; font-weight: 600; }
-    .navbar span { font-family: sans-serif; font-size: 0.9rem; }
-    .borrador-banner { background: #fff3cd; border-bottom: 2px solid #ffc107; text-align: center; padding: 0.7rem; font-family: sans-serif; font-size: 0.88rem; color: #664d03; font-weight: 600; }
-    .hero { background: #0a0a0a; color: white; padding: 4rem 2rem; text-align: center; }
-    .hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1rem; }
-    .hero h1 em { color: #e63946; font-style: italic; }
-    .hero p { color: #9ca3af; font-size: 1.1rem; font-family: sans-serif; }
-    .hero .quote { font-size: 1.3rem; color: #d1d5db; margin-top: 2rem; font-style: italic; }
-    .contenido { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem; }
-    .modulo { margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 2px solid #e5e7eb; }
-    .modulo:last-child { border-bottom: none; }
-    .modulo-num { font-family: sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #e63946; margin-bottom: 0.5rem; }
-    .modulo h2 { font-size: 1.8rem; margin-bottom: 1.5rem; line-height: 1.3; }
-    .modulo h3 { font-size: 1.2rem; margin: 2rem 0 0.8rem; color: #1d3557; font-family: sans-serif; }
-    .modulo p { margin-bottom: 1.2rem; font-size: 1.05rem; color: #374151; }
-    .modulo ul { margin: 0.8rem 0 1.2rem 1.5rem; }
-    .modulo ul li { margin-bottom: 0.5rem; color: #374151; font-size: 1.05rem; }
-    .modulo strong { color: #0a0a0a; }
-    .highlight { background: #f0f4ff; border-left: 4px solid #1d3557; padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; font-style: italic; }
-    .cierre { background: #0a0a0a; color: white; padding: 3rem 2rem; text-align: center; }
-    .cierre h2 { font-size: 1.6rem; margin-bottom: 1rem; }
-    .cierre p { color: #9ca3af; font-family: sans-serif; margin-bottom: 0.5rem; }
-    .cierre .frase-final { font-size: 1.3rem; color: white; font-style: italic; margin: 2rem 0; }
-    .indice { background: #f3f4f6; border-radius: 12px; padding: 2rem; margin-bottom: 3rem; font-family: sans-serif; }
-    .indice h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: #6b7280; margin-bottom: 1rem; }
-    .indice ol { margin-left: 1.2rem; }
-    .indice ol li { margin-bottom: 0.4rem; font-size: 0.95rem; color: #374151; }
-  </style>
+    body { font-family: 'Georgia', serif; background: #fafafa; color: #1a1a1a; line-height: 1.9; font-size: 1.05rem; }
+    .banner { background: #1d3557; color: white; text-align: center; padding: 0.8rem; font-family: sans-serif; font-size: 0.9rem; font-weight: 600; position: sticky; top: 0; z-index: 100; }
+    .contenido { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .portada { text-align: center; padding: 4rem 0 5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 4rem; }
+    .portada .academia { font-family: sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #e63946; margin-bottom: 1rem; }
+    .portada h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; margin-bottom: 1rem; }
+    .portada h1 em { font-style: italic; color: #6b7280; }
+    .portada .autor { font-family: sans-serif; color: #6b7280; font-size: 0.95rem; margin-top: 1.5rem; }
+    .portada .frase { font-size: 1.2rem; font-style: italic; color: #374151; margin-top: 2rem; padding: 1.5rem; border-left: 4px solid #e63946; text-align: left; }
+    .modulo { margin-bottom: 5rem; }
+    .modulo-num { font-family: sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #e63946; margin-bottom: 0.4rem; }
+    .modulo h2 { font-size: 1.9rem; margin-bottom: 2rem; line-height: 1.25; border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem; }
+    .modulo h3 { font-family: sans-serif; font-size: 1rem; font-weight: 700; color: #1d3557; margin: 2.5rem 0 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .modulo p { margin-bottom: 1.3rem; color: #374151; }
+    .modulo ul { margin: 0.5rem 0 1.5rem 1.2rem; }
+    .modulo ul li { margin-bottom: 0.5rem; color: #374151; }
+    .destacado { background: #f0f4ff; border-left: 4px solid #1d3557; padding: 1.2rem 1.5rem; margin: 2rem 0; font-style: italic; color: #1a1a1a; }
+    hr { border: none; border-top: 1px solid #e5e7eb; margin: 3rem 0; }
+
+    /* ILUSTRACIONES */
+    .ilustracion { margin: 2.5rem 0; background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem 1.5rem; }
+    .ilustracion-titulo { font-family: sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9ca3af; margin-bottom: 1.5rem; text-align: center; }
+
+    /* CADENA VISUAL */
+    .cadena-visual { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.3rem; margin: 1rem 0; }
+    .cadena-nodo { background: #0a0a0a; color: white; font-family: sans-serif; font-size: 0.75rem; font-weight: 700; padding: 0.6rem 0.9rem; border-radius: 8px; text-align: center; min-width: 70px; }
+    .cadena-nodo.rojo { background: #e63946; }
+    .cadena-nodo.azul { background: #1d3557; }
+    .cadena-flecha { color: #9ca3af; font-size: 1.2rem; font-weight: 300; }
+
+    /* PARALELO */
+    .paralelo { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1rem 0; }
+    .paralelo-col { background: #f9fafb; border-radius: 8px; padding: 1.2rem; }
+    .paralelo-col h4 { font-family: sans-serif; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+    .paralelo-col h4.rojo { color: #e63946; }
+    .paralelo-col h4.azul { color: #1d3557; }
+    .paralelo-fila { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.6rem; }
+    .paralelo-icono { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+    .paralelo-icono.rojo { background: #fde8ea; }
+    .paralelo-icono.azul { background: #e8f0f7; }
+    .paralelo-texto { font-family: sans-serif; font-size: 0.85rem; color: #374151; }
+    .paralelo-texto strong { display: block; font-weight: 700; color: #1a1a1a; font-size: 0.8rem; }
+    .paralelo-texto span { color: #6b7280; font-size: 0.78rem; }
+
+    /* REDUNDANCIA */
+    .redundancia { margin: 1rem 0; }
+    .linea-stream { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem; padding: 0.8rem 1rem; border-radius: 8px; }
+    .linea-stream.principal { background: #e8f5e9; border: 2px solid #4caf50; }
+    .linea-stream.backup { background: #fff3e0; border: 2px dashed #ff9800; }
+    .linea-label { font-family: sans-serif; font-weight: 700; font-size: 0.8rem; min-width: 80px; }
+    .linea-label.verde { color: #2e7d32; }
+    .linea-label.naranja { color: #e65100; }
+    .linea-barra { flex: 1; height: 8px; border-radius: 4px; }
+    .linea-barra.verde { background: linear-gradient(90deg, #4caf50, #81c784); }
+    .linea-barra.naranja { background: linear-gradient(90deg, #ff9800, #ffb74d); }
+    .linea-estado { font-family: sans-serif; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 4px; }
+    .linea-estado.activo { background: #4caf50; color: white; }
+    .linea-estado.standby { background: #ff9800; color: white; }
+
+    /* MENÚ ÁRBOL */
+    .arbol { font-family: monospace; font-size: 0.88rem; color: #374151; line-height: 2; padding: 1rem; background: #f8f9fa; border-radius: 8px; }
+    .arbol .raiz { color: #e63946; font-weight: 700; }
+    .arbol .rama { color: #1d3557; font-weight: 600; }
+    .arbol .hoja { color: #374151; }
+    .arbol .camino { background: #fde8ea; color: #e63946; font-weight: 700; padding: 0 4px; border-radius: 3px; }
+
+    /* KIT TÉCNICO */
+    .kit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.8rem; margin: 1rem 0; }
+    .kit-item { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.8rem; text-align: center; }
+    .kit-item .kit-icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+    .kit-item .kit-nombre { font-family: sans-serif; font-size: 0.78rem; font-weight: 600; color: #1a1a1a; }
+
+    /* MICRÓFONOS */
+    .mic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0; }
+    .mic-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; }
+    .mic-card .mic-nombre { font-family: sans-serif; font-weight: 700; font-size: 0.85rem; color: #1d3557; margin-bottom: 0.3rem; }
+    .mic-card .mic-patron { font-size: 1.5rem; margin-bottom: 0.3rem; }
+    .mic-card p { font-size: 0.82rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+    /* ZONAS PANTALLA */
+    .pantalla { background: #1a1a1a; border-radius: 8px; padding: 1rem; aspect-ratio: 16/9; position: relative; overflow: hidden; max-width: 500px; margin: 1rem auto; }
+    .zona { position: absolute; font-family: sans-serif; font-size: 0.65rem; font-weight: 700; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .zona-mosca { top: 8%; right: 5%; width: 12%; height: 10%; background: rgba(230,57,70,0.85); color: white; }
+    .zona-lower { bottom: 22%; left: 5%; width: 45%; height: 10%; background: rgba(29,53,87,0.85); color: white; }
+    .zona-sub { bottom: 8%; left: 10%; right: 10%; height: 10%; background: rgba(0,0,0,0.75); color: white; border: 1px solid rgba(255,255,255,0.3); }
+    .zona-pub { bottom: 20%; right: 5%; width: 25%; height: 8%; background: rgba(255,152,0,0.85); color: white; }
+    .zona-centro { top: 50%; left: 50%; transform: translate(-50%,-50%); color: #6b7280; font-size: 0.6rem; text-align: center; }
+
+    /* TIPOS TÉCNICO */
+    .tecnico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+    .tecnico-card { border-radius: 8px; padding: 1.2rem; }
+    .tecnico-card.amateur { background: #fff3e0; border: 1px solid #ffcc02; }
+    .tecnico-card.pro { background: #e8f5e9; border: 1px solid #4caf50; }
+    .tecnico-card h4 { font-family: sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.8rem; }
+    .tecnico-card h4.naranja { color: #e65100; }
+    .tecnico-card h4.verde { color: #2e7d32; }
+    .tecnico-card p { font-size: 0.82rem; color: #374151; margin: 0; line-height: 1.6; }
+
+    /* CIERRE */
+    .cierre { background: #0a0a0a; color: white; padding: 4rem 2rem; text-align: center; margin-top: 4rem; border-radius: 12px; }
+    .cierre h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    .cierre p { color: #9ca3af; font-family: sans-serif; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .cierre .frase-final { font-size: 1.4rem; font-style: italic; color: white; margin: 2rem 0; line-height: 1.5; }
+
+    @media (max-width: 600px) {
+      .paralelo { grid-template-columns: 1fr; }
+      .mic-grid { grid-template-columns: 1fr; }
+      .tecnico-grid { grid-template-columns: 1fr; }
+      .cadena-visual { gap: 0.2rem; }
+      .cadena-nodo { font-size: 0.65rem; padding: 0.5rem 0.6rem; min-width: 55px; }
+    }
+  
+  /* TABLA PARALELO AMPLIADA */
+  .tabla-paralelo-completa { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.88rem; }
+  .tabla-paralelo-completa .th-header { background:#1d3557; color:white; padding:0.7rem 1rem; font-family:sans-serif; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; text-align:center; }
+  .tabla-paralelo-completa th { background:#f9fafb; color:#1d3557; padding:0.6rem 1rem; font-family:sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; border:1px solid #e5e7eb; text-align:left; }
+  .tabla-paralelo-completa td { padding:0.9rem 1rem; border:1px solid #e5e7eb; vertical-align:top; }
+  .tabla-paralelo-completa tr:nth-child(odd) td { background:#fafafa; }
+  .tabla-paralelo-completa tr:nth-child(even) td { background:#f0f4ff; }
+  .tabla-paralelo-completa .fila-retorno td { background:#fff8e1 !important; border-color:#f59e0b !important; }
+  .tabla-paralelo-completa .concepto { font-weight:700; color:#1a1a1a; font-family:sans-serif; font-size:0.85rem; margin-bottom:0.2rem; }
+  .tabla-paralelo-completa .desc { color:#6b7280; font-size:0.8rem; font-style:italic; margin:0; }
+  .tabla-paralelo-completa .av-texto { color:#374151; font-size:0.85rem; margin:0; }
+
+  /* TABLA RETORNO POR FORMATO */
+  .tabla-retorno { width:100%; border-collapse:collapse; margin:1rem 0; font-size:0.85rem; }
+  .tabla-retorno th { background:#1d3557; color:white; padding:0.6rem 1rem; font-family:sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; border:1px solid #1d3557; text-align:left; }
+  .tabla-retorno td { padding:0.7rem 1rem; border:1px solid #e5e7eb; color:#374151; }
+  .tabla-retorno tr:nth-child(odd) td { background:#fafafa; }
+  .tabla-retorno tr:nth-child(even) td { background:#f0f4ff; }
+  .tabla-retorno .t-rapido { color:#2e7d32; font-weight:700; font-family:sans-serif; font-size:0.8rem; }
+  .tabla-retorno .t-medio { color:#e65100; font-weight:600; font-family:sans-serif; font-size:0.8rem; }
+  .tabla-retorno .t-lento { color:#6b7280; font-family:sans-serif; font-size:0.8rem; }
+
+  /* DIAGNÓSTICO */
+  .diagnostico { background:#f9fafb; border:1px solid #e5e7eb; border-left:4px solid #e63946; border-radius:8px; padding:1.5rem; margin:1.5rem 0; }
+  .diagnostico .diag-titulo { font-family:sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#e63946; margin-bottom:1rem; }
+  .diag-paso { display:flex; align-items:flex-start; gap:0.8rem; margin-bottom:0.7rem; }
+  .diag-icono { font-size:1.2rem; min-width:28px; text-align:center; padding-top:1px; }
+  .diag-contenido .diag-nombre { font-family:sans-serif; font-weight:700; font-size:0.85rem; color:#1a1a1a; }
+  .diag-contenido .diag-pregunta { color:#6b7280; font-size:0.82rem; font-family:sans-serif; }
+  .diag-flecha { color:#e5e7eb; padding-left:36px; font-size:1.1rem; line-height:1; margin-bottom:2px; }
+
+  /* PASOS NUMERADOS */
+  .pasos-lista { margin:1rem 0; }
+  .paso-item { display:flex; gap:1rem; margin-bottom:1rem; align-items:flex-start; }
+  .paso-num { min-width:28px; height:28px; background:#e63946; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:sans-serif; font-size:0.85rem; font-weight:700; flex-shrink:0; margin-top:1px; }
+  .paso-texto { flex:1; }
+  .paso-texto strong { color:#1a1a1a; }
+  .paso-texto p { color:#374151; font-size:0.9rem; margin:0.2rem 0 0; }
+
+  /* MÓDULO 0 tercer tipo */
+  .nota-alerta { background:#fde8ea; border-left:4px solid #e63946; padding:1rem 1.2rem; margin:1.5rem 0; border-radius:0 8px 8px 0; font-size:0.9rem; color:#374151; }
+</style>
+
 </head>
 <body>
 
-<nav class="navbar">
-  <span>Academia <strong style="color:#e63946">Encuadre</strong></span>
-  <a href="index.html">← Volver a la web</a>
-</nav>
-
-<div class="borrador-banner">⚠️ BORRADOR PARA REVISIÓN — Versión inicial para corrección del autor</div>
-
-<div class="hero">
-  <h1>Adaptabilidad en<br><em>Entornos Audiovisuales</em></h1>
-  <p>Academia Encuadre · Juan José Martín García</p>
-  <p class="quote">"La tecnología cambia. La cadena nunca cambia."</p>
-</div>
-
 <div class="contenido">
 
-  <div class="indice">
-    <h3>Índice de módulos</h3>
-    <ol start="0">
-      <li>La mentalidad del profesional adaptable</li>
-      <li>La cadena que nunca cambia</li>
-      <li>Redundancia: trabajar como profesional</li>
-      <li>El técnico que se basta solo</li>
-      <li>Imagen y luz: hacer más con menos</li>
-      <li>El sonido manda</li>
-      <li>Postproducción e imagen de marca</li>
-      <li>El realizador que sabe delegar</li>
-      <li>Integrar tecnologías nuevas en tu flujo</li>
-    </ol>
+  <div class="portada">
+    <div class="academia">Academia Encuadre</div>
+    <h1>Adaptabilidad en<br><em>Entornos Audiovisuales</em></h1>
+    <div class="autor">Juan José Martín García</div>
+    <div class="frase">"La tecnología cambia. La cadena nunca cambia."</div>
   </div>
 
+  <!-- INTRODUCCIÓN -->
+  <div class="modulo">
+    <div class="modulo-num">Introducción</div>
+    <h2>Por qué existe este curso</h2>
+    <p>Era un día normal en la UNED.</p>
+    <p>Videoconferencia con varias facultades de provincias. Yo controlaba la técnica. En la sala, un curso de macrodatos para la facultad de ingeniería.</p>
+    <p>Al descanso, se me acercaron dos personas. Uno era el rubito de Learning Heroes. No eran novatos. Sabían de lo que hablaban, pero tenían preguntas que no habían podido resolver solos.</p>
+    <p>Les expliqué. Les aclaré. Al terminar me dijeron: <em>nos has aclarado muchísimas cosas.</em></p>
+    <p>No me lo esperaba. Estaba trabajando, no enseñando. Pero enseñé. Y ellos aprendieron. Sin aula. Sin pizarra. Sin PowerPoint.</p>
+    <p>Ese día entendí algo que tardé tiempo en saber cómo formular: no hace falta un aula para enseñar. Hace falta saber. Y saber explicarlo.</p>
+    <p>Pero también entendí algo más: la gente que trabaja en este sector lleva años sin que nadie le explique bien las cosas. No porque no exista información. Sino porque muchos de quienes saben, no enseñan. Y algunos de los que enseñan, <strong>enseñan mal a propósito</strong>. Para que sigas necesitándolos.</p>
+    <p>Este curso es lo contrario de eso. Esto es lo que sé. Todo lo que sé. Explicado para que lo entiendas, lo uses, y lo superes.</p>
+    <div class="destacado">
+      <strong>Cuando termines este curso podrás:</strong><br>
+      • Diagnosticar cualquier fallo técnico en un directo usando un solo principio<br>
+      • Entender por qué los profesionales cobran el doble y trabajan con menos estrés<br>
+      • Evaluar cualquier tecnología nueva con criterio, da igual cuándo la encuentres<br>
+      • Entender por qué el audio es más importante que el vídeo
+    </div>
+    <p>No memorices. Comprende. La comprensión se queda. La memorización, no.</p>
+  </div>
+
+  <hr>
+
+  <!-- MÓDULO 0 -->
   <div class="modulo">
     <div class="modulo-num">Módulo 0</div>
-    <h2>La mentalidad del profesional adaptable</h2>
-    <p>Antes de hablar de cables, software o plataformas, necesito contarte algo que tardé años en entender y que nadie me enseñó en ningún curso.</p>
-    <p>Hay dos tipos de técnicos en este sector.</p>
-    <p>El primero entra en pánico cada vez que sale algo nuevo. Cada nueva plataforma, cada nuevo códec, cada nuevo protocolo le genera ansiedad. Siente que siempre va por detrás. Que nunca sabe suficiente. Que el sector avanza más rápido que él.</p>
-    <p>El segundo mira la novedad, la evalúa y decide si la integra o no. No corre detrás de cada novedad, pero tampoco se resiste al cambio. Simplemente tiene criterio. Y ese criterio es lo que le hace irremplazable.</p>
-    <p>Yo he trabajado con satélite, con microondas, con fibra óptica, con RDSI, con streaming por internet. Tecnologías completamente distintas. Hardware diferente. Software diferente. Nombres diferentes. Pero el trabajo era exactamente el mismo. Porque la cadena nunca cambia.</p>
-    <div class="highlight"><strong>Adaptarse no es saber usar la última herramienta. Es entender el principio detrás de cualquier herramienta.</strong></div>
-    <p>Este curso va de eso. No te voy a enseñar a usar un software concreto que en dos años estará obsoleto. Te voy a enseñar a entender cualquier tecnología que salga. A evaluarla. A integrarla en tu flujo sin que te rompa lo que ya funciona. Y a resolver problemas en tiempo real cuando las cosas fallen — porque van a fallar.</p>
-    <p>Bienvenido.</p>
+    <h2>La mentalidad</h2>
+    <p>Hay dos tipos de técnico. Los dos han visto las mismas cosas. Los dos llevan los mismos años en esto. La diferencia está en cómo procesan lo nuevo.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Dos tipos de técnico</div>
+      <div class="tecnico-grid">
+        <div class="tecnico-card amateur">
+          <h4 class="naranja">😰 El que se queda atrás</h4>
+          <p>Entra en pánico con cada novedad. Siente que lo que sabe ya no vale. Corre detrás de cada actualización, de cada formato, de cada estándar. Siempre llega tarde. Siempre va por detrás. Y esa angustia, con los años, lo agota.</p>
+        </div>
+        <div class="tecnico-card pro">
+          <h4 class="verde">💡 El adaptable</h4>
+          <p>No corre detrás de cada novedad. Evalúa. Decide. Integra o descarta. Entiende los principios que hay detrás de las herramientas. Por eso, cuando llega algo nuevo, lo mira con calma. Sabe qué buscar. Sabe cómo aprender sin que nadie se lo enseñe.</p>
+        </div>
+      </div>
+    </div>
+
+    <p>Yo he trabajado con satélite. Con microondas. Con fibra óptica. Con RDSI. Con streaming por internet. Tecnologías distintas. Hardware diferente. Nombres diferentes. Fabricantes distintos. Pero el trabajo era el mismo. Siempre el mismo.</p>
+    <p>Porque la cadena nunca cambia.</p>
+    <div class="destacado">Adaptarse no es dominar cada herramienta que aparece. Es entender el principio que hay detrás de cualquier herramienta. Con ese principio, cualquier herramienta nueva es solo otro idioma para decir lo mismo.</div>
+    <div class="nota-alerta">Hay un tercer tipo que no suele mencionarse, pero existe: <strong>el que sabe pero simula no saber.</strong> El que responde con jerga técnica innecesaria. El que hace que todo parezca difícil porque si fuera fácil, no te necesitaría. No aprendas de él. Aprende a reconocerlo.</div>
   </div>
 
+  <hr>
+
+  <!-- MÓDULO 1 -->
   <div class="modulo">
     <div class="modulo-num">Módulo 1</div>
     <h2>La cadena que nunca cambia</h2>
-    <p>Esto es lo más importante que vas a leer en todo el curso. Si entiendes esto, ya tienes el 50% del trabajo hecho.</p>
-    <p>Da igual si estás haciendo un enlace por satélite para una cadena de televisión, un streaming de un partido de fútbol por internet o una videoconferencia con otra universidad al otro lado del mundo. La cadena es siempre la misma:</p>
-    <div class="highlight"><strong>FUENTE → SEÑAL → CODIFICACIÓN → ENVÍO → RECEPCIÓN → DECODIFICACIÓN → PROYECCIÓN → PÚBLICO</strong></div>
-    <h3>FUENTE</h3>
-    <p>Es lo que quieres transmitir. Una cámara, un micrófono, una pantalla, un ordenador. La fuente genera la imagen y el sonido que vas a enviar.</p>
-    <h3>SEÑAL</h3>
-    <p>La fuente produce una señal. Puede ser analógica o digital, de vídeo o de audio. Esa señal tiene que ser limpia. Si la fuente es mala, todo lo demás da igual.</p>
-    <h3>CODIFICACIÓN</h3>
-    <p>La señal hay que convertirla a un formato que se pueda enviar. Un códec la comprime, la empaqueta y la prepara para el viaje. H.264, H.265, HEVC... los nombres cambian. El concepto no.</p>
-    <h3>ENVÍO</h3>
-    <p>La señal codificada viaja. Por satélite, por fibra, por microondas, por internet, por un cable HDMI. El medio cambia. El concepto no.</p>
-    <h3>RECEPCIÓN</h3>
-    <p>Al otro lado, alguien recibe la señal. Una antena parabólica, un router, un receptor de fibra, un ordenador. Si el envío fue bien, la señal llega. Si no, hay que diagnosticar en qué punto de la cadena se rompió.</p>
-    <h3>DECODIFICACIÓN</h3>
-    <p>La señal comprimida hay que descomprimirla para que se pueda ver y escuchar. El receptor hace el proceso inverso al codificador.</p>
-    <h3>PROYECCIÓN</h3>
-    <p>La señal decodificada llega a la pantalla, al altavoz, al monitor. El último paso técnico antes del público.</p>
-    <h3>PÚBLICO</h3>
-    <p>La persona que está al otro lado. El espectador. Para quien existe todo lo demás.</p>
-    <h3>Cómo usar esta cadena en la práctica</h3>
-    <p>Cuando algo falla en un directo — y va a fallar — lo primero que haces es recorrer la cadena de principio a fin. ¿La fuente está generando señal? ¿La señal llega al codificador? ¿El codificador está enviando? ¿La recepción está recibiendo? ¿El decodificador está funcionando? ¿La proyección está activa?</p>
-    <p>En cuanto encuentras dónde se rompe la cadena, sabes dónde está el problema. Y puedes empezar a resolverlo.</p>
-    <div class="highlight">Yo he resuelto una videoconferencia con Perú por teléfono, diciendo al técnico del otro lado qué tenía que mirar, en qué punto de la cadena estaba el fallo, sin ver nada de lo que tenía delante. Porque la cadena es la misma en Madrid que en Lima.</div>
+    <p>Esto es lo más importante del curso. Si te quedas con una sola cosa, que sea esto.</p>
+    <p>Da igual si haces un enlace por satélite. Da igual si streameas un partido. Da igual si videoconferencias con otra universidad al otro lado del mundo. Da igual si es 1985 o 2025. Da igual si el medio es cobre, fibra óptica, microondas o el aire.</p>
+    <p><strong>La cadena es siempre la misma.</strong></p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">La cadena de transmisión audiovisual</div>
+      <div class="cadena-visual">
+        <div class="cadena-nodo rojo">📷<br>FUENTE</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">📡<br>SEÑAL</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo azul">🗜️<br>CODIF.</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">🚀<br>ENVÍO</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo azul">📥<br>RECEP.</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">🔓<br>DECODIF.</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">🖥️<br>PROYEC.</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo rojo">👥<br>PÚBLICO</div>
+      </div>
+      <p style="font-size:0.82rem;color:#6b7280;text-align:center;font-family:sans-serif;margin-top:0.8rem;">Cada eslabón depende del anterior. El fallo siempre está en uno de estos puntos.</p>
+    </div>
+
+    <h3>El origen: Aristóteles y la cadena universal</h3>
+    <p>Esta cadena no es una invención de los ingenieros de broadcast. Es el principio universal de toda comunicación humana, formulado hace más de dos mil años.</p>
+    <p>Aristóteles, en su <em>Retórica</em>, describió los tres elementos del acto comunicativo: el <strong>emisor</strong> (quien habla), el <strong>mensaje</strong> (lo que quiere transmitir) y el <strong>receptor</strong> (quien escucha). Siglos después, el modelo de Shannon y Weaver añadió el <strong>canal</strong> — el medio por el que viaja — y el <strong>ruido</strong> que lo distorsiona. Y cualquier ingeniero añadiría el <strong>retorno</strong>: la confirmación de que el mensaje llegó.</p>
+    <p>Ese modelo tiene más de dos mil años. Y sigue siendo el esqueleto de todo lo que hacemos. Cambia el medio — de la voz al pergamino, del pergamino al telégrafo, del telégrafo al satélite, del satélite al streaming — y el principio es exactamente el mismo.</p>
+
+    <h3>El paralelo que lo cambia todo</h3>
+    <p>Lo que hace poderosa a la cadena técnica no es que sea técnica. Es que es lo mismo que lleva pasando desde que los humanos empezaron a comunicarse. Cuando entiendes ese paralelo, el streaming deja de ser algo nuevo y complicado. Se convierte en algo muy antiguo con ropa diferente.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Comunicación humana ↔ Transmisión audiovisual</div>
+      <table class="tabla-paralelo-completa">
+        <tr>
+          <th style="width:50%;">🗣️ Comunicación humana</th>
+          <th style="width:50%;">📡 Transmisión audiovisual</th>
+        </tr>
+        <tr>
+          <td>
+            <p class="concepto">👤 Emisor</p>
+            <p class="desc">Quien habla, quien actúa, quien inicia.</p>
+          </td>
+          <td>
+            <p class="concepto">📷 Fuente</p>
+            <p class="av-texto">La cámara, el micrófono, el presentador. El origen de todo. Si aquí no hay señal, no hay nada que transmitir.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="concepto">💬 Mensaje</p>
+            <p class="desc">Lo que quiere transmitir. La idea, la intención.</p>
+          </td>
+          <td>
+            <p class="concepto">🎞️ Señal</p>
+            <p class="av-texto">El audio y el vídeo capturados. El contenido en bruto, antes de prepararlo para viajar. La materia prima.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="concepto">📻 Medio</p>
+            <p class="desc">Por dónde viaja el mensaje. El aire, el papel, el cable, el libro.</p>
+          </td>
+          <td>
+            <p class="concepto">🗜️ → 🚀 → 📥 → 🔓 El camino</p>
+            <p class="av-texto">Codificación → Transmisión → Recepción → Decodificación. El medio no es solo un cable. Es todo lo que ocurre entre que la señal sale y llega. En cada punto puede haber ruido. En cada punto puede haber un fallo.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="concepto">👂 Receptor</p>
+            <p class="desc">Quien recibe el mensaje. Quien escucha, quien lee, quien ve.</p>
+          </td>
+          <td>
+            <p class="concepto">👥 Público</p>
+            <p class="av-texto">El espectador. La sala. La pantalla del móvil a las tres de la mañana. Para él existe todo lo demás. Si él no recibe, nada de lo anterior importa.</p>
+          </td>
+        </tr>
+        <tr class="fila-retorno">
+          <td>
+            <p class="concepto">🔄 Retorno</p>
+            <p class="desc">La confirmación de que el mensaje llegó. Y cómo llegó. El aplauso. La respuesta. La crítica.</p>
+          </td>
+          <td>
+            <p class="concepto">🖥️ Monitor de retorno · Métricas · Feedback</p>
+            <p class="av-texto">Tú, conectándote desde fuera con otro dispositivo. Los comentarios en tiempo real del chat. <strong>El número de visitas en directo.</strong> <strong>Los likes mientras emites.</strong> <strong>Los nuevos suscriptores que llegan durante el directo</strong> — la señal más clara de que algo que dijiste valió la pena. Las críticas de una película en los periódicos. El aplauso de la sala de teatro.</p>
+            <p style="margin-top:0.5rem;font-style:italic;color:#e63946;font-size:0.82rem;">Sin retorno, emites a ciegas. Con retorno, sabes que estás llegando.</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>El retorno según el formato</h3>
+    <p>El retorno no siempre es inmediato. La forma cambia. La función es la misma: confirmar que el mensaje llegó y calibrar cómo llegó. Sin ese bucle, la comunicación es un monólogo que no sabe si tiene audiencia.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Forma y tiempo del retorno según el medio</div>
+      <table class="tabla-retorno">
+        <tr>
+          <th>Tipo de producción</th>
+          <th>Forma de retorno</th>
+          <th>Tiempo</th>
+        </tr>
+        <tr>
+          <td>🔴 Streaming en directo</td>
+          <td>Comentarios en chat, nº de visitas, likes, nuevos suscriptores</td>
+          <td class="t-rapido">Tiempo real</td>
+        </tr>
+        <tr>
+          <td>📺 Televisión en directo</td>
+          <td>Audímetros, llamadas de control de calidad</td>
+          <td class="t-medio">Minutos</td>
+        </tr>
+        <tr>
+          <td>🎭 Teatro</td>
+          <td>Aplauso, silencio, risas de la sala</td>
+          <td class="t-rapido">Inmediato</td>
+        </tr>
+        <tr>
+          <td>📻 Radio</td>
+          <td>Llamadas al programa, redes sociales</td>
+          <td class="t-medio">Minutos</td>
+        </tr>
+        <tr>
+          <td>🎬 Película en cine</td>
+          <td>Críticas en prensa, taquilla, boca a boca</td>
+          <td class="t-lento">Días / semanas</td>
+        </tr>
+        <tr>
+          <td>📖 Libro</td>
+          <td>Reseñas, ventas, correos de lectores</td>
+          <td class="t-lento">Meses</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>Cómo usar la cadena cuando algo falla</h3>
+    <p>Cuando algo falla en un directo, no entres en pánico. El pánico es para quien no tiene método. El método es la cadena. Recórrela desde el principio, punto por punto:</p>
+
+    <div class="diagnostico">
+      <div class="diag-titulo">¿Dónde está el fallo?</div>
+      <div class="diag-paso"><div class="diag-icono">📷</div><div class="diag-contenido"><div class="diag-nombre">Fuente</div><div class="diag-pregunta">¿La cámara genera imagen? ¿El micrófono capta audio?</div></div></div>
+      <div class="diag-flecha">↓</div>
+      <div class="diag-paso"><div class="diag-icono">📡</div><div class="diag-contenido"><div class="diag-nombre">Señal</div><div class="diag-pregunta">¿La señal llega al codificador con buena calidad?</div></div></div>
+      <div class="diag-flecha">↓</div>
+      <div class="diag-paso"><div class="diag-icono">🗜️</div><div class="diag-contenido"><div class="diag-nombre">Codificación</div><div class="diag-pregunta">¿El codificador está procesando? ¿El bitrate es estable?</div></div></div>
+      <div class="diag-flecha">↓</div>
+      <div class="diag-paso"><div class="diag-icono">🚀</div><div class="diag-contenido"><div class="diag-nombre">Envío</div><div class="diag-pregunta">¿Hay conexión? ¿El servidor recibe el stream?</div></div></div>
+      <div class="diag-flecha">↓</div>
+      <div class="diag-paso"><div class="diag-icono">📥</div><div class="diag-contenido"><div class="diag-nombre">Recepción</div><div class="diag-pregunta">¿El receptor está activo? ¿La señal llega al otro extremo?</div></div></div>
+      <div class="diag-flecha">↓</div>
+      <div class="diag-paso"><div class="diag-icono">🔓</div><div class="diag-contenido"><div class="diag-nombre">Decodificación</div><div class="diag-pregunta">¿El decodificador funciona? ¿Hay compatibilidad de códec?</div></div></div>
+      <div class="diag-flecha">↓</div>
+      <div class="diag-paso"><div class="diag-icono">🖥️</div><div class="diag-contenido"><div class="diag-nombre">Proyección</div><div class="diag-pregunta">¿El monitor está activo? ¿La entrada correcta está seleccionada?</div></div></div>
+      <div class="diag-flecha">↓</div>
+      <div class="diag-paso"><div class="diag-icono">👥</div><div class="diag-contenido"><div class="diag-nombre">Público / Retorno</div><div class="diag-pregunta">¿El espectador recibe? ¿Los comentarios, las visitas y los likes confirman que llega bien?</div></div></div>
+    </div>
+
+    <div class="destacado">Una vez estaba en la UNED. Videoconferencia con Perú. La conexión se caía. Yo estaba en Madrid. El técnico estaba en Lima. No veía nada de lo que él tenía delante. Le fui diciendo por teléfono en qué punto de la cadena buscar. Un punto. El siguiente. El siguiente. Encontramos el fallo. Sacamos adelante la videoconferencia. La cadena es la misma en Madrid que en Lima.</div>
     <p><strong>Aprende la cadena. El resto viene solo.</strong></p>
   </div>
 
+  <hr>
+
+  <!-- MÓDULO 2 -->
   <div class="modulo">
     <div class="modulo-num">Módulo 2</div>
-    <h2>Redundancia: trabajar como profesional</h2>
-    <p>Cuando eres amateur, tienes una línea. Cuando eres profesional, siempre tienes dos.</p>
-    <p>Esta es la diferencia más importante entre alguien que hace streaming los fines de semana y alguien que cobra por ello. El amateur reza para que no falle nada. El profesional asume que algo va a fallar y lo tiene previsto.</p>
-    <div class="highlight"><strong>La regla es simple: todo duplicado.</strong> Una línea principal. Una línea de backup. Enviando en paralelo desde el primer segundo. No cuando falla la principal. Desde el principio.</p></div>
-    <p>Por eso también necesitas dos personas con roles claros:</p>
-    <p><strong>Operador en emisión:</strong> controla la señal que sale. Monitoriza la codificación, el ancho de banda, la calidad de imagen y sonido. Si la línea principal cae, activa el cambio a la línea de backup.</p>
-    <p><strong>Operador en recepción:</strong> controla lo que llega. Tiene las dos líneas entrando. Cuando el operador de emisión avisa, cambia la recepción a la línea de backup sin que el espectador note nada.</p>
-    <h3>El protocolo de fallo</h3>
-    <p>Antes de cada evento, tienes que tener claro:</p>
-    <ul>
-      <li>¿Qué pasa si cae la línea principal?</li>
-      <li>¿Quién toma la decisión de cambiar?</li>
-      <li>¿Cómo se comunica ese cambio?</li>
-      <li>¿Cuánto tiempo tienes para resolverlo antes de que el espectador lo note?</li>
-    </ul>
-    <div class="highlight"><strong>La diferencia entre un técnico caro y uno barato no es que al caro no le fallen las cosas. Es que cuando le fallan, las resuelve sin que nadie lo note.</strong></div>
+    <h2>Redundancia</h2>
+    <p>Los amateurs tienen una línea. Los profesionales siempre tienen dos.</p>
+    <p>No es paranoia. Es respeto por el trabajo que estás haciendo. Por las personas que confían en ti. Por el directo que no puede pararse.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Sistema profesional: dos líneas siempre activas</div>
+      <div class="redundancia">
+        <div class="linea-stream principal">
+          <span class="linea-label verde">PRINCIPAL</span>
+          <div class="linea-barra verde"></div>
+          <span class="linea-estado activo">EN AIRE</span>
+        </div>
+        <div class="linea-stream backup">
+          <span class="linea-label naranja">BACKUP</span>
+          <div class="linea-barra naranja"></div>
+          <span class="linea-estado standby">STANDBY</span>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:#6b7280;text-align:center;font-family:sans-serif;">Ambas líneas emiten desde el primer segundo. Si la principal falla, el backup ya está listo.</p>
+    </div>
+
+    <p><strong>Operador en emisión.</strong> Controla la señal que sale. Si la línea principal cae, activa el cambio.</p>
+    <p><strong>Operador en recepción.</strong> Controla lo que llega. Cuando el operador de emisión avisa, cambia a la línea de backup. El espectador no nota nada.</p>
+    <p>Esa invisibilidad es el objetivo. No el heroísmo de solucionar la crisis. Sino que no haya crisis.</p>
+
+    <h3>Sé tú el cliente</h3>
+    <p>Antes del directo real, haz una emisión de prueba completa. Conéctate desde fuera. Con el móvil. Con el ordenador. Otra red. Comprueba que la imagen llega, que el audio se escucha, que el enlace funciona, que la latencia es aceptable.</p>
+    <p>Si algo falla en la prueba, falla cuando estás tranquilo y tienes tiempo. Si falla en el directo, falla cuando el estrés ya es máximo y el tiempo es mínimo.</p>
+    <div class="destacado">La diferencia entre un técnico caro y uno barato no es que al caro no le fallen las cosas. Es que cuando le fallan, las resuelve sin que nadie lo note. Y le fallan menos porque las anticipó antes.</div>
   </div>
 
+  <hr>
+
+  <!-- MÓDULO 3 -->
   <div class="modulo">
     <div class="modulo-num">Módulo 3</div>
     <h2>El técnico que se basta solo</h2>
-    <p>En un directo, no puedes llamar al técnico de soporte. No puedes esperar a que llegue alguien a arreglarlo. Tienes que resolverlo tú, ahora, mientras el evento sigue.</p>
-    <h3>Soldar con estaño</h3>
-    <p>Saber soldar un conector es una habilidad que parece del siglo pasado y que te va a sacar de más de un apuro. Un cable roto, un conector que se ha soltado, una soldadura fría que da interferencias intermitentes.</p>
-    <p><strong>XLR / Canon balanceado:</strong> el conector de audio profesional por excelencia. Tres pines: masa, señal positiva, señal negativa. El cable balanceado cancela el ruido en distancias largas.</p>
-    <p><strong>RCA:</strong> el conector de audio y vídeo doméstico. Dos pines: señal y masa. Menos robusto que el XLR, más fácil de soldar.</p>
-    <h3>Crimpado de RJ45 y RJ11</h3>
-    <p><strong>RJ45:</strong> el conector de red. Ocho hilos, orden específico (EIA/TIA 568B es el estándar). Un cable de red mal crimpado da problemas intermitentes que vuelven loco a cualquiera.</p>
-    <p><strong>RJ11:</strong> el conector de teléfono. Más pequeño, menos hilos. Todavía aparece en instalaciones antiguas y en algunas conexiones RDSI.</p>
-    <h3>BNC con cable de malla y vivo</h3>
-    <p>El BNC es el conector de vídeo profesional. El cable coaxial tiene dos conductores: el vivo (conductor central) y la malla (blindaje exterior). El vivo lleva la señal. La malla la protege de interferencias.</p>
-    <p>Al conectar un BNC hay que asegurarse de que el vivo no toca la malla. Un cortocircuito entre ambos y no hay señal.</p>
-    <h3>Lo que siempre llevas encima</h3>
-    <ul>
-      <li>Cables de repuesto de cada tipo que uses</li>
-      <li>Soldador de viaje (los hay de gas, sin enchufe)</li>
-      <li>Estaño, flux, cinta aislante</li>
-      <li>Comprobador de cables</li>
-      <li>Linterna (trabajarás en oscuridad)</li>
-      <li>Navaja o pelacables</li>
-    </ul>
-    <div class="highlight">Un técnico sin repuestos es un técnico que reza. No reces. Lleva repuestos.</div>
+    <p>En un directo no puedes llamar al técnico de soporte. Tienes que resolverlo tú. Ahora. Mientras el evento sigue. Eso no es presión. Eso es autonomía.</p>
+
+    <h3>Conectores que debes dominar</h3>
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Los conectores del técnico profesional</div>
+      <div class="kit-grid">
+        <div class="kit-item"><div class="kit-icon">🎙️</div><div class="kit-nombre">XLR / Canon<br><span style="font-weight:400;color:#6b7280;font-size:0.72rem;">Audio balanceado</span></div></div>
+        <div class="kit-item"><div class="kit-icon">🔴</div><div class="kit-nombre">RCA<br><span style="font-weight:400;color:#6b7280;font-size:0.72rem;">Audio / vídeo doméstico</span></div></div>
+        <div class="kit-item"><div class="kit-icon">🌐</div><div class="kit-nombre">RJ45<br><span style="font-weight:400;color:#6b7280;font-size:0.72rem;">Red ethernet</span></div></div>
+        <div class="kit-item"><div class="kit-icon">📞</div><div class="kit-nombre">RJ11<br><span style="font-weight:400;color:#6b7280;font-size:0.72rem;">Teléfono / RDSI</span></div></div>
+        <div class="kit-item"><div class="kit-icon">📺</div><div class="kit-nombre">BNC<br><span style="font-weight:400;color:#6b7280;font-size:0.72rem;">Vídeo profesional</span></div></div>
+        <div class="kit-item"><div class="kit-icon">⚫</div><div class="kit-nombre">Cinta autovulc.<br><span style="font-weight:400;color:#6b7280;font-size:0.72rem;">Sellado en exterior</span></div></div>
+      </div>
+    </div>
+
+    <p><strong>XLR / Canon balanceado.</strong> Tres pines: masa, señal positiva, señal negativa. Lleva dos copias de la señal en fase invertida. El ruido que se cuela en el camino llega igual a las dos copias. En el destino, el circuito suma una con la inversa de la otra: el ruido se cancela, la señal se refuerza. Por eso un XLR de 50 metros llega limpio. Si tienes un zumbido persistente, revisa las soldaduras y la masa antes de buscar el problema en otro sitio.</p>
+    <p><strong>BNC.</strong> Vivo y malla no pueden tocarse. Si se tocan, no hay señal, o hay señal con nieve. Un cable coaxial mal terminado o dañado es el origen de la mayoría de los problemas de señal de vídeo.</p>
+    <p><strong>Cinta autovulcanizante.</strong> Se amalgama con el calor de la mano. Se suelda a sí misma. En exterior con lluvia, esa diferencia puede ser la del evento que sigue y el que se corta.</p>
+
+    <h3>El kit que siempre llevas</h3>
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Kit de emergencia del técnico</div>
+      <div class="kit-grid">
+        <div class="kit-item"><div class="kit-icon">🔌</div><div class="kit-nombre">Cables de repuesto</div></div>
+        <div class="kit-item"><div class="kit-icon">🔥</div><div class="kit-nombre">Soldador de gas</div></div>
+        <div class="kit-item"><div class="kit-icon">🪛</div><div class="kit-nombre">Estaño y flux</div></div>
+        <div class="kit-item"><div class="kit-icon">🖤</div><div class="kit-nombre">Cintas aislante y autovulc.</div></div>
+        <div class="kit-item"><div class="kit-icon">🔍</div><div class="kit-nombre">Comprobador de cables</div></div>
+        <div class="kit-item"><div class="kit-icon">🔦</div><div class="kit-nombre">Linterna</div></div>
+        <div class="kit-item"><div class="kit-icon">🔪</div><div class="kit-nombre">Navaja / pelacables</div></div>
+      </div>
+    </div>
+    <div class="destacado">Un técnico sin repuestos es un técnico que reza. No reces. Lleva repuestos.</div>
   </div>
 
+  <hr>
+
+  <!-- MÓDULO 4 -->
   <div class="modulo">
     <div class="modulo-num">Módulo 4</div>
-    <h2>Imagen y luz: hacer más con menos</h2>
-    <p>La mejor luz es la que no pagas, no pesas y no transportas. La luz natural.</p>
-    <h3>La luz natural como fuente principal</h3>
-    <p>Una ventana al norte da luz constante y difusa todo el día. Una al este da luz directa por la mañana. Coloca al sujeto con la ventana lateral — esa posición da más volumen y definición al rostro.</p>
-    <h3>Rebotes y relleno improvisado</h3>
-    <p>La luz lateral crea sombra en el lado opuesto. Para suavizarla: una cartulina blanca, un panel de foam, una pared blanca cercana o un reflector plegable (menos de 15 euros). Con una ventana y un reflector tienes iluminación de dos puntos completamente gratuita.</p>
-    <h3>Temperatura de color</h3>
-    <p>Si mezclas fuentes de distinta temperatura de color sin compensar, la imagen queda extraña. Ajusta el balance de blancos de la cámara para la fuente dominante.</p>
-    <h3>Iluminación escénica</h3>
-    <p>Los dimmers controlan la intensidad de cada grupo de focos. La mesa de luces controla los dimmers. El cableado va desde cada foco hasta el dimmer, y del dimmer a la mesa — es cableado de potencia, hay que respetarlo.</p>
-    <p>Hoy existen aplicaciones que permiten controlar los dimmers desde un ordenador, emulando una mesa de luz física. Son útiles para instalaciones temporales.</p>
-    <div class="highlight">Anular las señales de móvil en sala durante la representación evita interferencias de radiofrecuencia que se cuelan en los micrófonos inalámbricos. Una función arruinada por un zumbido que nadie sabe de dónde viene.</div>
+    <h2>Imagen y luz</h2>
+    <p>La mejor luz es la que no pagas. La que no pesas. La que no transportas. La luz natural.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Posición de la luz natural — vista desde arriba</div>
+      <svg viewBox="0 0 400 220" style="width:100%;max-width:400px;display:block;margin:0 auto;">
+        <rect x="10" y="60" width="15" height="100" fill="#87CEEB" rx="3"/>
+        <text x="5" y="55" font-family="sans-serif" font-size="10" fill="#6b7280">Ventana</text>
+        <line x1="25" y1="80" x2="160" y2="105" stroke="#FFF176" stroke-width="2" stroke-dasharray="5,3" opacity="0.8"/>
+        <line x1="25" y1="110" x2="160" y2="110" stroke="#FFF176" stroke-width="2" stroke-dasharray="5,3" opacity="0.8"/>
+        <line x1="25" y1="140" x2="160" y2="115" stroke="#FFF176" stroke-width="2" stroke-dasharray="5,3" opacity="0.8"/>
+        <circle cx="160" cy="110" r="18" fill="#FFB74D" stroke="#E65100" stroke-width="2"/>
+        <text x="153" y="115" font-family="sans-serif" font-size="11" fill="white" font-weight="bold">👤</text>
+        <text x="148" y="140" font-family="sans-serif" font-size="9" fill="#374151">Sujeto</text>
+        <path d="M178 100 Q220 110 178 120" fill="none" stroke="#9E9E9E" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <text x="200" y="108" font-family="sans-serif" font-size="9" fill="#9ca3af">Sombra</text>
+        <rect x="290" y="90" width="25" height="40" fill="#FFFFFF" stroke="#e63946" stroke-width="2" rx="3"/>
+        <text x="283" y="145" font-family="sans-serif" font-size="9" fill="#e63946">Reflector</text>
+        <line x1="290" y1="100" x2="178" y2="105" stroke="#FFE082" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.7"/>
+        <line x1="290" y1="115" x2="178" y2="115" stroke="#FFE082" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.7"/>
+        <rect x="160" y="170" width="30" height="20" fill="#1d3557" rx="3"/>
+        <circle cx="175" cy="170" r="5" fill="#0a0a0a" stroke="#1d3557" stroke-width="1"/>
+        <text x="162" y="205" font-family="sans-serif" font-size="9" fill="#374151">Cámara</text>
+        <line x1="310" y1="165" x2="330" y2="165" stroke="#FFF176" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="334" y="169" font-family="sans-serif" font-size="9" fill="#6b7280">Luz natural</text>
+        <line x1="310" y1="180" x2="330" y2="180" stroke="#FFE082" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <text x="334" y="184" font-family="sans-serif" font-size="9" fill="#6b7280">Rebote</text>
+      </svg>
+      <p style="font-size:0.8rem;color:#6b7280;text-align:center;font-family:sans-serif;margin-top:0.5rem;">Ventana lateral + reflector = iluminación de dos puntos gratuita</p>
+    </div>
+
+    <p>El corcho blanco de ferretería es el mejor reflector improvisado: ligero, rígido, barato y no se dobla con el viento.</p>
+
+    <h3>Iluminación escénica — Dimmers</h3>
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Estructura de líneas de dimmer</div>
+      <svg viewBox="0 0 400 160" style="width:100%;max-width:400px;display:block;margin:0 auto;">
+        <rect x="150" y="10" width="100" height="40" fill="#1d3557" rx="5"/>
+        <text x="175" y="35" font-family="sans-serif" font-size="11" fill="white" font-weight="bold">Mesa luces</text>
+        <rect x="155" y="80" width="90" height="35" fill="#374151" rx="5"/>
+        <text x="180" y="103" font-family="sans-serif" font-size="11" fill="white">Dimmer</text>
+        <line x1="200" y1="50" x2="200" y2="80" stroke="#9ca3af" stroke-width="2"/>
+        <circle cx="80" cy="140" r="15" fill="#FFF176" stroke="#F9A825" stroke-width="2"/>
+        <text x="68" y="145" font-family="sans-serif" font-size="10">💡</text>
+        <text x="62" y="120" font-family="sans-serif" font-size="9" fill="#e63946" font-weight="bold">1A Principal</text>
+        <circle cx="155" cy="140" r="12" fill="#E8F5E9" stroke="#81C784" stroke-width="2"/>
+        <text x="143" y="145" font-family="sans-serif" font-size="10">💡</text>
+        <text x="133" y="120" font-family="sans-serif" font-size="9" fill="#2e7d32" font-weight="bold">1B Relleno</text>
+        <circle cx="245" cy="140" r="15" fill="#FFF176" stroke="#F9A825" stroke-width="2"/>
+        <text x="233" y="145" font-family="sans-serif" font-size="10">💡</text>
+        <text x="227" y="120" font-family="sans-serif" font-size="9" fill="#e63946" font-weight="bold">2A Principal</text>
+        <circle cx="320" cy="140" r="12" fill="#E8F5E9" stroke="#81C784" stroke-width="2"/>
+        <text x="308" y="145" font-family="sans-serif" font-size="10">💡</text>
+        <text x="298" y="120" font-family="sans-serif" font-size="9" fill="#2e7d32" font-weight="bold">2B Relleno</text>
+        <line x1="80" y1="125" x2="165" y2="115" stroke="#F9A825" stroke-width="1.5"/>
+        <line x1="155" y1="128" x2="175" y2="115" stroke="#81C784" stroke-width="1.5"/>
+        <line x1="245" y1="125" x2="225" y2="115" stroke="#F9A825" stroke-width="1.5"/>
+        <line x1="320" y1="128" x2="235" y2="115" stroke="#81C784" stroke-width="1.5"/>
+      </svg>
+      <p style="font-size:0.8rem;color:#6b7280;text-align:center;font-family:sans-serif;margin-top:0.5rem;">Cada línea A tiene su B de relleno. No es capricho — es diseño.</p>
+    </div>
+
+    <div class="destacado">Yo me confundí la primera vez. Me di cuenta. Se lo dije a mi maestro sin intentar arreglarlo a escondidas. Me dijo: eres la primera persona que reconoce que se está equivocando. Todo el mundo intenta arreglarlo solo. Y siempre acaba peor. Lo arreglamos juntos. Desde ese día, cada vez que tenía que llevar a alguien, me elegía a mí.</div>
+    <p><strong>El error reconocido a tiempo no te expone. Te distingue.</strong></p>
   </div>
 
+  <hr>
+
+  <!-- MÓDULO 5 -->
   <div class="modulo">
     <div class="modulo-num">Módulo 5</div>
     <h2>El sonido manda</h2>
-    <div class="highlight" style="font-size:1.2rem"><strong>El audio es el 75% del enganche del público.</strong></div>
-    <p>Una imagen mediocre la gente aguanta. Un audio malo, no. La gente se va. Inmediatamente. No importa lo buena que sea la imagen. No importa lo interesante que sea el contenido.</p>
-    <h3>Micrófonos: cuál usar en cada situación</h3>
-    <p><strong>Micrófono de solapa (lavalier):</strong> para presentadores y entrevistados. Discreto y práctico. Sensible a los roces — colócalo bien y asegúralo con cinta.</p>
-    <p><strong>Micrófono de cañón (shotgun):</strong> muy direccional, solo recoge lo que está delante. Ideal para exteriores con ruido ambiente.</p>
-    <p><strong>Micrófono de ambiente:</strong> para capturar el sonido de un espacio completo. Útil para eventos con público, música en directo.</p>
-    <h3>Ganancia, ruido de fondo y eco</h3>
-    <p><strong>Ganancia:</strong> ajusta para que los picos lleguen aproximadamente a -12dB, dejando margen para los momentos más altos.</p>
-    <p><strong>Ruido de fondo:</strong> antes de grabar, escucha con auriculares 30 segundos sin que nadie hable. Lo que escuchas es lo que va a estar en toda la grabación.</p>
-    <p><strong>Eco:</strong> acerca el micrófono a la fuente y cambia su posición si el espacio rebota mucho.</p>
-    <h3>Monitorizar siempre con auriculares</h3>
-    <div class="highlight">Nunca confíes en los altavoces para monitorizar el audio que estás grabando o emitiendo. Los auriculares cerrados te dicen exactamente lo que está entrando en el sistema. Ponlos desde el principio. Nunca los quites durante el directo.</div>
-    <h3>Interferencias de radiofrecuencia</h3>
-    <p>Los sistemas de audio inalámbrico pueden sufrir interferencias de los móviles del público. Solución: elegir frecuencias alejadas de las bandas de móvil, pedir al público que apague o ponga en modo avión, y en espacios controlados considerar inhibidores de frecuencia.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">El audio es el 75% del enganche</div>
+      <svg viewBox="0 0 300 80" style="width:100%;max-width:300px;display:block;margin:0 auto;">
+        <rect x="10" y="25" width="210" height="30" fill="#e63946" rx="5"/>
+        <text x="105" y="45" font-family="sans-serif" font-size="13" fill="white" font-weight="bold" text-anchor="middle">🎵 AUDIO — 75%</text>
+        <rect x="220" y="25" width="70" height="30" fill="#e5e7eb" rx="5"/>
+        <text x="255" y="45" font-family="sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Imagen 25%</text>
+      </svg>
+      <p style="font-size:0.82rem;color:#6b7280;text-align:center;font-family:sans-serif;margin-top:0.5rem;">Imagen mediocre se perdona. Audio malo, no. La gente se va.</p>
+    </div>
+
+    <p>La gente se marcha cuando el audio falla. El oído es menos tolerante que el ojo, y menos consciente. El espectador no sabe por qué deja de ver el vídeo. Solo sabe que algo le molesta. Y cierra.</p>
+
+    <h3>Tipos de micrófono</h3>
+    <div class="mic-grid">
+      <div class="mic-card"><div class="mic-patron">⭕</div><div class="mic-nombre">Omnidireccional</div><p>360°. Ideal para podcast con varios participantes en mesa. Poco alcance en espacios ruidosos.</p></div>
+      <div class="mic-card"><div class="mic-patron">🫀</div><div class="mic-nombre">Cardioide</div><p>Recoge lo que tiene delante. El más común y versátil para streaming.</p></div>
+      <div class="mic-card"><div class="mic-patron">🎯</div><div class="mic-nombre">Supercardioide / Cañón</div><p>Muy direccional. Largo alcance. Para aislar una fuente en entorno ruidoso.</p></div>
+      <div class="mic-card"><div class="mic-patron">📎</div><div class="mic-nombre">Solapa / Lavalier</div><p>Se esconde en la ropa. Para actores, entrevistados, presentadores que se mueven.</p></div>
+    </div>
+
+    <p>La regla que no cambia: cuanto más cerca esté el micrófono de la fuente, mejor la señal. La distancia es el enemigo del audio.</p>
+    <div class="destacado">Nunca confíes en los altavoces para monitorizar. Los auriculares cerrados te dicen exactamente lo que entra en el sistema. Ponlos desde el principio. No los quites durante el directo.</div>
   </div>
 
+  <hr>
+
+  <!-- MÓDULO 6 -->
   <div class="modulo">
     <div class="modulo-num">Módulo 6</div>
-    <h2>Postproducción e imagen de marca</h2>
-    <h3>Subtítulos: alcance, no solo accesibilidad</h3>
-    <p>El 85% de los vídeos en redes sociales se ven sin sonido. Si no tienes subtítulos, pierdes el 85% de tu audiencia potencial en el móvil. Y si tienes subtítulos en varios idiomas, multiplicas tu alcance sin esfuerzo adicional.</p>
-    <div class="highlight">Un canal sin subtítulos en 2025 es como un canal sin imagen en 1990.</div>
-    <h3>Rótulos: identidad visual</h3>
-    <p>Los rótulos son los elementos gráficos sobreimpresos en el vídeo: nombre del presentador, cargo, lugar, fecha. Su función no es solo informativa — es de marca. Cuando tus rótulos tienen siempre la misma tipografía, color y posición, el espectador los reconoce sin leerlos.</p>
-    <ul>
-      <li>Una tipografía para todo. Dos como máximo.</li>
-      <li>Color de marca consistente en todos los vídeos.</li>
-      <li>Posición fija. El nombre siempre en el mismo lugar.</li>
-      <li>Animación sencilla. La complejidad no es profesionalismo.</li>
-    </ul>
-    <h3>Lower thirds, intro y outro</h3>
-    <p><strong>Lower third:</strong> rótulo en el tercio inferior con nombre y cargo. El elemento más visto y más identificativo.</p>
-    <p><strong>Intro:</strong> los primeros 3-5 segundos. Tu logo, tu música, tu identidad. El espectador aprende a reconocerte por la intro.</p>
-    <p><strong>Outro:</strong> el cierre. Dónde dirigir al espectador después del vídeo. No dejes que acabe sin que sepa qué hacer.</p>
-    <h3>La música como marca</h3>
-    <p>La música de cabecera es tan identificativa como el logo. A veces más. Elige una música que represente tu estilo y úsala siempre. Usa música libre de derechos — no uses música comercial.</p>
+    <h2>Imagen de marca</h2>
+    <p>El contenido se olvida. La identidad se reconoce.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Zonas de pantalla — cada elemento tiene su lugar</div>
+      <div class="pantalla">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#6b7280;font-size:0.6rem;font-family:sans-serif;text-align:center;">📹 CONTENIDO</div>
+        <div class="zona zona-mosca">🔴 MOSCA</div>
+        <div class="zona zona-lower">📝 Lower Third — Nombre</div>
+        <div class="zona zona-sub">Subtítulos aquí — nunca se pisan</div>
+        <div class="zona zona-pub">📢 Pub.</div>
+      </div>
+      <p style="font-size:0.8rem;color:#6b7280;text-align:center;font-family:sans-serif;margin-top:0.5rem;">Cada zona es fija. Nunca se invaden entre sí.</p>
+    </div>
+
+    <p><strong>La mosca.</strong> El logo en la esquina. Siempre visible. Si alguien hace una captura, tu marca sigue ahí. La mosca trabaja incluso cuando tú no estás mirando.</p>
+    <p><strong>Los subtítulos.</strong> El 85% de los vídeos en redes se ven sin sonido. Sin subtítulos, pierdes el 85% de tu audiencia potencial. Con subtítulos en varios idiomas, multiplicas tu alcance sin esfuerzo.</p>
+    <div class="destacado">Un canal sin subtítulos en 2025 es como un canal sin imagen en 1990.</div>
   </div>
 
+  <hr>
+
+  <!-- MÓDULO 7 -->
   <div class="modulo">
     <div class="modulo-num">Módulo 7</div>
-    <h2>El realizador que sabe delegar</h2>
-    <p>El mejor realizador no es el que más sabe. Es el que mejor elige a su equipo y sabe qué hacer con cada persona.</p>
-    <h3>Saber lo suficiente de todo</h3>
-    <p>Para dirigir bien necesitas entender lo que hace cada miembro de tu equipo. No para hacerlo tú mejor que ellos — sino para saber lo que necesitas contratar, evaluar si lo están haciendo bien y comunicarte con ellos en su lenguaje.</p>
-    <h3>Contratar a alguien mejor que tú</h3>
-    <p>La regla es esta: <strong>contrata a alguien que sepa más que tú en su especialidad.</strong> No para decirle lo que tiene que hacer. Sino para que él te diga lo que necesitas. El mejor director de fotografía que puedas permitirte te va a dar ideas que tú no tendrías.</p>
-    <div class="highlight">Tu trabajo como realizador es elegir bien, darles el contexto que necesitan y confiar en ellos.</div>
-    <h3>Pedir ayuda a tiempo</h3>
-    <p>En un directo, el orgullo cuesta caro. Si no sabes algo, pregunta antes de que sea un problema. El técnico que nunca pide ayuda improvisa en silencio mientras el evento se desmorona. El que pide ayuda a tiempo saca adelante el directo.</p>
-    <h3>El arco del streamer que crece</h3>
-    <ul>
-      <li>Empieza solo, hace todo</li>
-      <li>Crece, se complica</li>
-      <li>Invierte, delega</li>
-      <li>Dirige, no ejecuta</li>
-    </ul>
-    <div class="highlight"><strong>El realizador que respeta a su equipo siempre tiene equipo disponible. El que no respeta, siempre está buscando.</strong></div>
+    <h2>El realizador que delega</h2>
+    <p>El mejor realizador no es el que más sabe. Es el que mejor elige a su equipo y luego confía en él.</p>
+    <p>El arco es este: <strong>primero lo haces todo solo</strong> porque no hay equipo. Luego hay equipo, pero sigues haciéndolo todo porque todavía no confías. Luego aprendes a delegar lo que otros hacen igual que tú. Luego aprendes a delegar lo que otros hacen mejor que tú. Ahí está la diferencia.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">El arco del streamer que crece</div>
+      <svg viewBox="0 0 400 80" style="width:100%;max-width:400px;display:block;margin:0 auto;">
+        <rect x="10" y="20" width="80" height="40" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1" rx="6"/>
+        <text x="50" y="38" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">Empieza solo</text>
+        <text x="50" y="52" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">hace todo</text>
+        <text x="93" y="43" font-size="14" fill="#9ca3af">→</text>
+        <rect x="100" y="20" width="80" height="40" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1" rx="6"/>
+        <text x="140" y="38" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">Crece</text>
+        <text x="140" y="52" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">se complica</text>
+        <text x="183" y="43" font-size="14" fill="#9ca3af">→</text>
+        <rect x="190" y="20" width="80" height="40" fill="#fff3e0" stroke="#ff9800" stroke-width="1" rx="6"/>
+        <text x="230" y="38" font-family="sans-serif" font-size="9" fill="#e65100" text-anchor="middle">Invierte</text>
+        <text x="230" y="52" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">delega</text>
+        <text x="273" y="43" font-size="14" fill="#9ca3af">→</text>
+        <rect x="280" y="20" width="110" height="40" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="6"/>
+        <text x="335" y="38" font-family="sans-serif" font-size="9" fill="#2e7d32" text-anchor="middle" font-weight="bold">Dirige</text>
+        <text x="335" y="52" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">no ejecuta</text>
+      </svg>
+    </div>
+
+    <div class="destacado">Mi maestro me eligió a mí para acompañarle porque reconocí mi error. No porque fuera el mejor técnico de la sala. Sino porque era confiable. Saber que alguien te dice la verdad cuando hay un problema vale más que saber que alguien nunca tiene problemas.</div>
+    <p><strong>La confiabilidad es la habilidad más difícil de entrenar. Y la más valiosa de tener.</strong></p>
+    <p>El técnico que respeta a su equipo siempre tiene equipo disponible. El que no respeta, siempre está buscando.</p>
   </div>
 
+  <hr>
+
+  <!-- MÓDULO 8 -->
   <div class="modulo">
     <div class="modulo-num">Módulo 8</div>
-    <h2>Integrar tecnologías nuevas en tu flujo</h2>
-    <h3>La pregunta que debes hacerte ante cualquier novedad</h3>
-    <div class="highlight"><strong>¿En qué punto de la cadena mejora esto lo que ya tengo?</strong> Si la respuesta es clara y la mejora es real, lo integras. Si la respuesta es vaga o la mejora es marginal, lo dejas pasar.</div>
-    <h3>Cómo integrar sin romper</h3>
-    <p>Cuando decides incorporar algo nuevo, no lo hagas en un directo importante. Pruébalo en condiciones controladas. Entiende cómo falla. Aprende qué hacer cuando falla. Luego intégralo en proyectos pequeños. Cuando confías en él, inclúyelo en tu flujo habitual.</p>
-    <h3>La IA como herramienta de trabajo</h3>
-    <p>Subtítulos automáticos en tiempo real. Traducción a múltiples idiomas. Eliminación de ruido de fondo. Mejora de imagen. Generación de rótulos. Todo esto ya existe, ya es accesible y ya es barato.</p>
-    <p>El técnico que ignore la IA va a quedar desfasado. El que la use sin criterio cometerá errores. El que la integre bien — entendiendo qué hace bien y qué hace mal — hará más trabajo, en menos tiempo, con más calidad.</p>
-    <h3>El flujo que nunca dejas de revisar</h3>
-    <p>Una vez al año, recorre tu flujo de principio a fin. ¿Hay algo que haces por costumbre pero que ya no añade valor? ¿Hay algo nuevo que podría mejorar un paso concreto? El flujo que revisas es el flujo que mejora.</p>
+    <h2>Integrar lo nuevo</h2>
+    <p>La tecnología cambia. Tu método para aprender tecnología nueva no tiene que cambiar.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Los menús como diagrama de llaves</div>
+      <div class="arbol">
+        <span class="raiz">📱 EQUIPO NUEVO</span><br>
+        &nbsp;&nbsp;├── <span class="rama">🔊 Audio</span><br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="hoja">Ganancia</span><br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="camino">★ Monitorización ← TÚ ESTÁS AQUÍ</span><br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── <span class="hoja">Ecualizador</span><br>
+        &nbsp;&nbsp;├── <span class="rama">📡 Red</span><br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="camino">★ Stream principal ← TÚ ESTÁS AQUÍ</span><br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── <span class="hoja">Backup</span><br>
+        &nbsp;&nbsp;└── <span class="rama">⚙️ Sistema</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="hoja">Configuración avanzada</span>
+      </div>
+    </div>
+
+    <h3>El protocolo de integración — 5 pasos</h3>
+    <div class="pasos-lista">
+      <div class="paso-item"><div class="paso-num">1</div><div class="paso-texto"><strong>Aprende el mapa.</strong><p>Explora todos los menús sin tocar nada. Solo mira. Familiarízate con la estructura.</p></div></div>
+      <div class="paso-item"><div class="paso-num">2</div><div class="paso-texto"><strong>Identifica tus rutas.</strong><p>¿Qué cinco cosas vas a usar el 90% del tiempo? Esas son tus rutas. El resto es accesorio.</p></div></div>
+      <div class="paso-item"><div class="paso-num">3</div><div class="paso-texto"><strong>Prueba en privado.</strong><p>No en un directo. No delante de nadie. Tú solo, con tiempo.</p></div></div>
+      <div class="paso-item"><div class="paso-num">4</div><div class="paso-texto"><strong>Sé el cliente.</strong><p>Conéctate desde fuera como si fueras el espectador. Busca los fallos antes de que el directo los encuentre por ti.</p></div></div>
+      <div class="paso-item"><div class="paso-num">5</div><div class="paso-texto"><strong>Introduce errores a propósito.</strong><p>¿Qué pasa si desconecto esto? Conoce los fallos en condiciones controladas para que en directo los reconozcas y soluciones.</p></div></div>
+    </div>
+
+    <div class="destacado">El directo no es un ensayo. El ensayo es el ensayo. Solo cuando algo ya no te da sorpresas, está listo para un directo importante.</div>
+  </div>
+
+  <hr>
+
+  <!-- MÓDULO 9 -->
+  <div class="modulo">
+    <div class="modulo-num">Módulo 9</div>
+    <h2>La señal por dentro: audio, vídeo y su recorrido técnico</h2>
+    <p>Cuando haces una producción profesional, el audio y el vídeo viajan por caminos separados. Se mezclan. Y al final se juntan en el codificador para salir como una sola señal. Entender ese recorrido es lo que te permite diagnosticar cualquier fallo.</p>
+
+    <h3>La señal de audio — del micro a la mesa</h3>
+    <p>El micrófono genera una señal eléctrica muy débil. Necesita el preamplificador — el previo — que la eleva al nivel de línea, el nivel estándar de trabajo en toda la cadena profesional.</p>
+    <p>Desde el previo, la señal viaja por XLR balanceado. El balanceado lleva dos copias de la señal en fase invertida. El ruido que se cuela en el camino llega igual a las dos copias. En la mesa, el circuito suma una copia con la inversa de la otra: el ruido se cancela, la señal se refuerza. Eso es el <strong>rechazo de modo común</strong>. Por eso un XLR de 50 metros llega limpio y un RCA de 10 metros llega con zumbido. No es magia. Es física.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Recorrido de la señal de audio</div>
+      <div class="cadena-visual">
+        <div class="cadena-nodo rojo">🎙️<br>Micro</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">⚡<br>Previo</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo azul">🎚️<br>Mesa<br>sonido</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">📊<br>Compresor/<br>EQ</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo rojo">🗜️<br>Codificador</div>
+      </div>
+    </div>
+
+    <h3>La señal de vídeo — de la cámara a la mesa</h3>
+    <p>La cámara genera la señal de vídeo. En producción profesional sale por BNC en formato SDI — Serial Digital Interface. Sin comprimir. A largas distancias. Con bloqueo mecánico. Es el estándar del broadcast por razones técnicas precisas, no por tradición.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Recorrido de la señal de vídeo</div>
+      <div class="cadena-visual">
+        <div class="cadena-nodo rojo">📷<br>Cámara</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">🔌<br>BNC/SDI<br>o HDMI</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo azul">🎬<br>Mesa<br>vídeo</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo">🖥️<br>Monitor<br>retorno</div>
+        <div class="cadena-flecha">→</div>
+        <div class="cadena-nodo rojo">🗜️<br>Codificador</div>
+      </div>
+    </div>
+
+    <h3>Dónde se juntan audio y vídeo</h3>
+    <p>El codificador es el punto de convergencia. Recibe el audio. Recibe el vídeo. Los combina, los comprime — H.264, H.265, lo que sea — y genera el stream.</p>
+    <div class="destacado">Lo que entra en el codificador es lo que sale. El codificador no mejora lo que recibe. Basura entra, basura sale. Por eso controlas la señal en cada punto de la cadena, no solo al final.</div>
+
+    <h3>HDMI — el conector que lo cambió todo</h3>
+    <p>Apareció para el consumo doméstico y acabó siendo imprescindible en producción. Lleva vídeo y audio en un solo cable. Está en absolutamente todo. Sus limitaciones: longitud máxima recomendada de 5 a 10 metros sin amplificador, sensible a conectores sueltos, sin bloqueo mecánico.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">Comparativa de conectores de vídeo</div>
+      <div class="kit-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="kit-item"><div class="kit-icon">📺</div><div class="kit-nombre">BNC / SDI<br><span style="font-weight:400;color:#6b7280;font-size:0.72rem;">Broadcast. Larga distancia. Con bloqueo.</span></div></div>
+        <div class="kit-item"><div class="kit-icon">🔷</div><div class="kit-nombre">HDMI<br><span style="font-weight:400;color:#6b7280;font-size:0.72rem;">Universal. Audio+vídeo. Distancia corta.</span></div></div>
+        <div class="kit-item"><div class="kit-icon">⚡</div><div class="kit-nombre">DisplayPort / USB-C<br><span style="font-weight:400;color:#6b7280;font-size:0.72rem;">Ordenadores. Alta resolución.</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- MÓDULO 10 -->
+  <div class="modulo">
+    <div class="modulo-num">Módulo 10</div>
+    <h2>El vídeo preparado: más que una presentación</h2>
+    <p>Llevar vídeos preparados para un directo es la diferencia entre un productor y un streamer. La mayoría no lo hace. Los que lo hacen, se notan.</p>
+
+    <h3>Tipos de vídeo que puedes llevar preparados</h3>
+    <p><strong>El vídeo de contexto.</strong> 30 segundos con imágenes de recurso antes de una entrevista. Sitúa al espectador y eleva la producción.</p>
+    <p><strong>El total postproducido.</strong> Una declaración ya editada, con su rótulo, lista para emitir en el momento exacto que decides. No improvisas. Lo tienes preparado.</p>
+    <p><strong>El vídeo de relleno.</strong> Para transiciones y cambios de sección. Mantiene al espectador enganchado y te da tiempo a organizar lo siguiente.</p>
+    <p><strong>La cabecera.</strong> Tu intro de programa. Con tu música, tu logo, tu identidad. Empieza siempre igual. Con el tiempo, cuando el espectador escucha tu música, sabe que empieza tu contenido. Es un ancla pavloviana de marca.</p>
+
+    <div class="destacado">Un directo bien preparado no es el que improvisa mejor. Es el que tiene preparado tanto que casi no necesita improvisar.</div>
+
+    <h3>La estructura de montaje de noticias: el esqueleto</h3>
+    <p>Esta es la estructura profesional que han usado todas las televisiones del mundo durante décadas. Cuando montas una pieza, no empiezas por las imágenes. Empiezas por el sonido.</p>
+
+    <div class="ilustracion">
+      <div class="ilustracion-titulo">El esqueleto de montaje — orden de trabajo</div>
+      <svg viewBox="0 0 500 220" style="width:100%;display:block;">
+        <rect x="10" y="10" width="140" height="50" fill="#1d3557" rx="6"/>
+        <text x="80" y="32" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">1. VOZ EN OFF</text>
+        <text x="80" y="48" font-family="sans-serif" font-size="9" fill="#93c5fd" text-anchor="middle">La locución. El esqueleto.</text>
+        <text x="155" y="40" font-size="16" fill="#9ca3af">→</text>
+        <rect x="170" y="10" width="140" height="50" fill="#1d3557" rx="6"/>
+        <text x="240" y="32" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">2. TOTALES</text>
+        <text x="240" y="48" font-family="sans-serif" font-size="9" fill="#93c5fd" text-anchor="middle">Declaraciones con sonido</text>
+        <text x="315" y="40" font-size="16" fill="#9ca3af">→</text>
+        <rect x="330" y="10" width="160" height="50" fill="#e63946" rx="6"/>
+        <text x="410" y="32" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">3. PLANOS RECURSO</text>
+        <text x="410" y="48" font-family="sans-serif" font-size="9" fill="#fecaca" text-anchor="middle">Imágenes sobre la voz</text>
+        <text x="10" y="95" font-family="sans-serif" font-size="9" fill="#6b7280" font-weight="700">TIMELINE:</text>
+        <rect x="10" y="105" width="480" height="22" fill="#dbeafe" rx="3"/>
+        <text x="15" y="121" font-family="sans-serif" font-size="9" fill="#1d3557" font-weight="700">🎙️ VOZ EN OFF — "Hoy en el ayuntamiento de Madrid se celebró..."</text>
+        <rect x="180" y="132" width="120" height="22" fill="#fef3c7" rx="3" stroke="#f59e0b" stroke-width="1"/>
+        <text x="185" y="148" font-family="sans-serif" font-size="9" fill="#92400e" font-weight="700">🎤 TOTAL — Alcalde habla</text>
+        <rect x="305" y="132" width="185" height="22" fill="#dbeafe" rx="3"/>
+        <text x="310" y="148" font-family="sans-serif" font-size="9" fill="#1d3557" font-weight="700">🎙️ Continúa voz en off...</text>
+        <rect x="10" y="159" width="175" height="22" fill="#dcfce7" rx="3" stroke="#4caf50" stroke-width="1"/>
+        <text x="15" y="175" font-family="sans-serif" font-size="9" fill="#166534">📷 Planos recurso: fachada ayuntamiento</text>
+        <rect x="305" y="159" width="185" height="22" fill="#dcfce7" rx="3" stroke="#4caf50" stroke-width="1"/>
+        <text x="310" y="175" font-family="sans-serif" font-size="9" fill="#166534">📷 Planos recurso: sala plenos</text>
+        <rect x="10" y="195" width="12" height="12" fill="#dbeafe" stroke="#1d3557" stroke-width="1" rx="2"/>
+        <text x="26" y="206" font-family="sans-serif" font-size="8" fill="#6b7280">Voz en off</text>
+        <rect x="100" y="195" width="12" height="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="2"/>
+        <text x="116" y="206" font-family="sans-serif" font-size="8" fill="#6b7280">Total (declaración)</text>
+        <rect x="230" y="195" width="12" height="12" fill="#dcfce7" stroke="#4caf50" stroke-width="1" rx="2"/>
+        <text x="246" y="206" font-family="sans-serif" font-size="8" fill="#6b7280">Planos recurso</text>
+      </svg>
+    </div>
+
+    <p><strong>Paso 1 — La voz en off.</strong> Es el esqueleto. Lo primero que montas. Sin imágenes todavía. Solo la voz. Escúchala entera. Si el esqueleto falla, todo lo demás falla con él.</p>
+    <p><strong>Paso 2 — Los totales.</strong> Las declaraciones de los protagonistas, en el sitio exacto donde tiene sentido. Imagen y sonido inseparables: se colocan como una sola pieza.</p>
+    <p><strong>Paso 3 — Los planos recurso.</strong> Ahora sí las imágenes. Planos que ilustren, que añadan información, que mantengan el ritmo. Si la voz dice "el alcalde presentó el presupuesto", el plano es el alcalde, el documento, la sala de plenos. No una calle aleatoria.</p>
+    <div class="destacado">Lo primero siempre es el sonido. La voz. Los totales. El vídeo es la capa que se añade encima. Nunca al revés.</div>
   </div>
 
 </div>
 
-<div class="cierre">
-  <h2>Lo que te llevas de este curso</h2>
-  <p>Has aprendido que la cadena de transmisión nunca cambia. Que el profesional trabaja siempre con redundancia. Que saber hacer las cosas con las manos marca la diferencia. Que la luz natural es tu mejor aliada. Que el audio es el 75% del enganche. Que los subtítulos son alcance. Que delegar es una habilidad, no una debilidad. Y que integrar lo nuevo con criterio es lo que te mantiene relevante.</p>
-  <p class="frase-final">"Entiende los principios. El resto se adapta solo."</p>
-  <p>Academia Encuadre · Juan José Martín García</p>
-  <p>academiaencuadre@gmail.com · @academiaencuadre en TikTok</p>
+<div class="contenido">
+  <div class="cierre">
+    <h2>Lo que te llevas</h2>
+    <p>La cadena nunca cambia. El profesional trabaja siempre con redundancia.</p>
+    <p>Primero eres cliente, luego emisor. El kit que llevas encima vale más que cualquier garantía.</p>
+    <p>La luz natural es gratuita. El audio es el setenta y cinco por ciento.</p>
+    <p>Los subtítulos son alcance. La mosca es tu firma.</p>
+    <p>Delegar es una habilidad. Reconocer el error es lo que te hace confiable.</p>
+    <p>El ensayo es donde te pierdes para que en el directo llegues seguro.</p>
+    <div class="frase-final">"La herramienta no te hace profesional.<br>El dominio de la herramienta, sí."</div>
+    <p>Academia Encuadre · Juan José Martín García</p>
+    <p>academiaencuadre@gmail.com · @academiaencuadre</p>
+  </div>
 </div>
 
 </body>
