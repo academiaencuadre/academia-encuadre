@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentoría y Becas — Academia Encuadre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", sans-serif; background: #f8fafc; color: #1a1a1a; }
+
+    .navbar { background: #1d3557; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { color: white; font-weight: 800; font-size: 1.1rem; text-decoration: none; }
+    .logo span { color: #e63946; }
+    .btn-back { color: #94a3b8; font-size: 0.85rem; text-decoration: none; }
+    .btn-back:hover { color: white; }
+
+    .hero { background: #1d3557; color: white; padding: 4rem 2rem; text-align: center; }
+    .badge { display: inline-block; background: #e63946; color: white; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 999px; margin-bottom: 1.2rem; }
+    .hero h1 { font-family: "Playfair Display", serif; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+    .hero p { color: #94a3b8; max-width: 580px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
+
+    /* MENTORÍA */
+    .mentoria-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 4rem; }
+    @media(max-width:640px){ .mentoria-grid { grid-template-columns: 1fr; } }
+    .mentoria-card { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
+    .mentoria-card.featured { border: 2px solid #e63946; }
+    .plan-badge { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #e63946; margin-bottom: 0.5rem; }
+    .plan-nombre { font-size: 1.3rem; font-weight: 800; color: #1d3557; margin-bottom: 0.3rem; }
+    .plan-precio { font-size: 2rem; font-weight: 900; color: #1d3557; margin-bottom: 1rem; }
+    .plan-precio span { font-size: 0.9rem; font-weight: 400; color: #94a3b8; }
+    .plan-features { list-style: none; margin-bottom: 1.5rem; }
+    .plan-features li { padding: 0.4rem 0; font-size: 0.9rem; color: #475569; border-bottom: 1px solid #f1f5f9; display: flex; gap: 0.5rem; }
+    .plan-features li:last-child { border-bottom: none; }
+    .btn-mentoria { display: block; text-align: center; background: #1d3557; color: white; padding: 0.8rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.9rem; }
+    .btn-mentoria.red { background: #e63946; }
+    .btn-mentoria:hover { opacity: 0.9; }
+    .whatsapp-note { text-align: center; margin-top: 0.8rem; font-size: 0.8rem; color: #94a3b8; }
+
+    /* BECAS */
+    .becas-section { background: #1d3557; border-radius: 20px; padding: 3rem 2.5rem; margin-bottom: 4rem; color: white; }
+    .becas-header { text-align: center; margin-bottom: 2.5rem; }
+    .becas-header h2 { font-family: "Playfair Display", serif; font-size: 2rem; margin-bottom: 0.8rem; }
+    .becas-header p { color: #94a3b8; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+    .becas-incluye { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+    @media(max-width:640px){ .becas-incluye { grid-template-columns: 1fr; } }
+    .beca-item { background: rgba(255,255,255,0.07); border-radius: 12px; padding: 1.2rem; text-align: center; }
+    .beca-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .beca-texto { font-size: 0.85rem; color: #cbd5e1; line-height: 1.5; }
+    .beca-texto strong { color: white; display: block; margin-bottom: 0.2rem; }
+    .plazas { text-align: center; background: rgba(230,57,70,0.2); border: 1px solid rgba(230,57,70,0.4); border-radius: 10px; padding: 0.8rem; margin-bottom: 2rem; font-size: 0.9rem; color: #fca5a5; font-weight: 600; }
+
+    /* FORMULARIOS */
+    .form-section { background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 2px 20px rgba(0,0,0,0.07); margin-bottom: 2rem; }
+    .form-section h3 { font-size: 1.3rem; font-weight: 700; color: #1d3557; margin-bottom: 0.4rem; }
+    .form-section .form-desc { color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6; }
+    .form-group { margin-bottom: 1.2rem; }
+    label { display: block; font-size: 0.85rem; font-weight: 600; color: #374151; margin-bottom: 0.4rem; }
+    input, textarea, select { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-family: inherit; color: #1a1a1a; outline: none; transition: border 0.2s; }
+    input:focus, textarea:focus, select:focus { border-color: #1d3557; }
+    textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media(max-width:640px){ .form-row { grid-template-columns: 1fr; } }
+    .btn-submit { width: 100%; background: #e63946; color: white; border: none; padding: 1rem; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 0.5rem; }
+    .btn-submit:hover { background: #c1121f; }
+    .form-nota { font-size: 0.75rem; color: #94a3b8; margin-top: 0.8rem; text-align: center; }
+
+    footer { text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">Academia <span>Encuadre</span></a>
+    <a href="index.html" class="btn-back">← Volver</a>
+  </nav>
+
+  <div class="hero">
+    <span class="badge">Crecimiento personalizado</span>
+    <h1>Mentoría Privada<br>y Becas</h1>
+    <p>Trabajo contigo directamente para que llegues más lejos y más rápido. Y si no tienes recursos, hay un sitio para ti también.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- MENTORÍA -->
+    <div style="text-align:center;margin-bottom:2rem;">
+      <span class="badge" style="background:#1d3557;">Mentoría Privada</span>
+      <h2 style="font-family:Playfair Display,serif;font-size:1.8rem;margin-top:0.8rem;color:#1d3557;">Elige tu plan</h2>
+    </div>
+
+    <div class="mentoria-grid">
+      <div class="mentoria-card">
+        <div class="plan-badge">Sesión única</div>
+        <div class="plan-nombre">Mentoría Inicial</div>
+        <div class="plan-precio">90€ <span>/ sesión 1h</span></div>
+        <ul class="plan-features">
+          <li>✓ Diagnóstico de tu situación actual</li>
+          <li>✓ Plan de acción personalizado</li>
+          <li>✓ Resolución de dudas técnicas</li>
+          <li>✓ Grabación de la sesión</li>
+        </ul>
+        <a href="https://wa.me/34604906631?text=Hola%20Juan%20Jos%C3%A9%2C%20me%20interesa%20una%20mentor%C3%ADa%20inicial" class="btn-mentoria" target="_blank">Reservar por WhatsApp</a>
+      </div>
+
+      <div class="mentoria-card featured">
+        <div class="plan-badge">Más popular</div>
+        <div class="plan-nombre">Acompañamiento</div>
+        <div class="plan-precio">220€ <span>/ 3 sesiones</span></div>
+        <ul class="plan-features">
+          <li>✓ 3 sesiones de 1h cada una</li>
+          <li>✓ Seguimiento entre sesiones</li>
+          <li>✓ Acceso directo por WhatsApp</li>
+          <li>✓ Plan de desarrollo a 30 días</li>
+          <li>✓ Grabación de todas las sesiones</li>
+        </ul>
+        <a href="https://wa.me/34604906631?text=Hola%20Juan%20Jos%C3%A9%2C%20me%20interesa%20el%20pack%20de%20acompa%C3%B1amiento%20de%203%20sesiones" class="btn-mentoria red" target="_blank">Reservar por WhatsApp</a>
+      </div>
+    </div>
+    <p class="whatsapp-note">📱 También puedes escribir directamente a <strong>+34 604 906 631</strong></p>
+
+    <!-- BECAS -->
+    <div class="becas-section">
+      <div class="becas-header">
+        <span class="badge">5 plazas disponibles</span>
+        <h2>Becas Academia Encuadre</h2>
+        <p>Si tienes talento, pasión por el audiovisual y no tienes recursos económicos, esta beca es para ti. Disponible para España y Latinoamérica.</p>
+      </div>
+
+      <div class="plazas">🔴 Solo 5 becas disponibles — España y Latinoamérica</div>
+
+      <div class="becas-incluye">
+        <div class="beca-item">
+          <div class="beca-icon">🎓</div>
+          <div class="beca-texto"><strong>3 cursos completos</strong>Acceso total a todos los cursos de Academia Encuadre</div>
+        </div>
+        <div class="beca-item">
+          <div class="beca-icon">🎯</div>
+          <div class="beca-texto"><strong>Mentoría inicial</strong>Sesión personalizada para arrancar con el pie derecho</div>
+        </div>
+        <div class="beca-item">
+          <div class="beca-icon">📅</div>
+          <div class="beca-texto"><strong>Seguimiento a los 15 días</strong>Segunda mentoría para ver tu progreso y resolver dudas</div>
+        </div>
+      </div>
+
+      <!-- FORMULARIO BECA -->
+      <form action="https://formspree.io/f/xgojgrgo" method="POST">
+        <input type="hidden" name="_subject" value="Solicitud de Beca — Academia Encuadre">
+        <input type="hidden" name="tipo" value="BECA">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre completo *</label>
+            <input type="text" name="nombre" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label>País *</label>
+            <input type="text" name="pais" required placeholder="España / México / ...">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email de contacto *</label>
+          <input type="email" name="email" required placeholder="tu@email.com">
+        </div>
+
+        <div class="form-group">
+          <label>Enlace a tu vídeo de motivación (YouTube) *</label>
+          <input type="url" name="video_motivacion" required placeholder="https://youtu.be/...">
+        </div>
+
+        <div class="form-group">
+          <label>Enlace a un trabajo audiovisual tuyo *</label>
+          <input type="url" name="trabajo_audiovisual" required placeholder="https://youtu.be/... o tu web">
+        </div>
+
+        <div class="form-group">
+          <label>Tu situación personal (confidencial — solo lo leerá Juan José) *</label>
+          <textarea name="situacion_personal" required placeholder="Cuéntame tu situación. Solo yo lo leeré y será tratado con total confidencialidad." style="min-height:140px;"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Enviar solicitud de beca</button>
+        <p class="form-nota">🔒 Tu situación personal es confidencial y no se publicará en ningún lugar</p>
+      </form>
+    </div>
+
+  </div>
+
+  <footer>© Academia Encuadre — academiaencuadre.com</footer>
+
+</body>
+</html>
