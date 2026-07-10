@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentoría Privada — Academia Encuadre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", sans-serif; background: #f8fafc; color: #1a1a1a; }
+    .navbar { background: #1d3557; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { color: white; font-weight: 800; font-size: 1.1rem; text-decoration: none; }
+    .logo span { color: #e63946; }
+    .btn-back { color: #94a3b8; font-size: 0.85rem; text-decoration: none; }
+    .hero { background: #1d3557; color: white; padding: 4rem 2rem; text-align: center; }
+    .badge { display: inline-block; background: #e63946; color: white; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 999px; margin-bottom: 1.2rem; }
+    .hero h1 { font-family: "Playfair Display", serif; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+    .hero p { color: #94a3b8; max-width: 580px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+    .aviso { background: #fff7ed; border-left: 4px solid #f97316; border-radius: 8px; padding: 1.2rem 1.5rem; margin-bottom: 2.5rem; }
+    .aviso p { color: #7c2d12; font-size: 0.92rem; line-height: 1.7; }
+    .aviso strong { color: #9a3412; }
+    .para-quien { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 20px rgba(0,0,0,0.07); margin-bottom: 2rem; }
+    .para-quien h3 { color: #1d3557; font-size: 1.2rem; margin-bottom: 1.2rem; }
+    .check-list { list-style: none; }
+    .check-list li { padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9; font-size: 0.92rem; color: #374151; display: flex; gap: 0.6rem; }
+    .check-list li:last-child { border-bottom: none; }
+    .no-list li { color: #94a3b8; }
+    .no-list li::before { content: "✗"; color: #e63946; }
+    .yes-list li::before { content: "✓"; color: #22c55e; }
+    .form-section { background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
+    .form-section h3 { font-size: 1.2rem; font-weight: 700; color: #1d3557; margin-bottom: 0.4rem; }
+    .form-desc { color: #64748b; font-size: 0.88rem; margin-bottom: 1.5rem; line-height: 1.6; }
+    .form-group { margin-bottom: 1.2rem; }
+    label { display: block; font-size: 0.85rem; font-weight: 600; color: #374151; margin-bottom: 0.4rem; }
+    input, textarea, select { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-family: inherit; color: #1a1a1a; outline: none; }
+    input:focus, textarea:focus { border-color: #1d3557; }
+    textarea { resize: vertical; min-height: 110px; }
+    .btn-submit { width: 100%; background: #1d3557; color: white; border: none; padding: 1rem; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 0.5rem; }
+    .btn-submit:hover { background: #e63946; }
+    .o-whatsapp { text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: #64748b; }
+    .o-whatsapp a { color: #1d3557; font-weight: 700; text-decoration: none; }
+    footer { text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Academia <span>Encuadre</span></a>
+    <a href="index.html" class="btn-back">← Volver</a>
+  </nav>
+
+  <div class="hero">
+    <span class="badge">Plazas limitadas</span>
+    <h1>Mentoría Privada</h1>
+    <p>Trabajo contigo de forma directa y personalizada. Pero antes de contactar, lee bien esta página.</p>
+  </div>
+
+  <div class="container">
+
+    <div class="aviso">
+      <p><strong>Importante antes de escribir:</strong> La mentoría es un servicio serio para personas que de verdad quieren avanzar. No atiendo consultas de curiosos ni a quienes buscan atajos. El precio se consulta de forma personalizada según el caso. Si no estás dispuesto a trabajar, esto no es para ti.</p>
+    </div>
+
+    <div class="para-quien" style="margin-bottom:1rem;">
+      <h3>✅ Esto es para ti si...</h3>
+      <ul class="check-list yes-list">
+        <li>Tienes claro que quieres dedicarte al audiovisual o al streaming profesional</li>
+        <li>Estás dispuesto a practicar, equivocarte y mejorar</li>
+        <li>Buscas orientación real de alguien con experiencia en eventos</li>
+        <li>Respetas el tiempo ajeno y llegas preparado a las sesiones</li>
+      </ul>
+    </div>
+
+    <div class="para-quien" style="margin-bottom:2.5rem;">
+      <h3>❌ Esto NO es para ti si...</h3>
+      <ul class="check-list no-list">
+        <li>Solo tienes curiosidad pero no compromiso</li>
+        <li>Esperas que alguien haga el trabajo por ti</li>
+        <li>No tienes tiempo para practicar entre sesiones</li>
+        <li>Buscas resultados sin esfuerzo</li>
+      </ul>
+    </div>
+
+    <div class="form-section">
+      <h3>Solicitar información</h3>
+      <p class="form-desc">Cuéntame tu situación real. Seré directo contigo: si creo que puedo ayudarte, te respondo. Si no, también te lo digo. Sin rodeos.</p>
+
+      <form action="https://formspree.io/f/xgojgrgo" method="POST">
+        <input type="hidden" name="_subject" value="Consulta Mentoría — Academia Encuadre">
+        <input type="hidden" name="tipo" value="MENTORÍA">
+
+        <div class="form-group">
+          <label>Nombre *</label>
+          <input type="text" name="nombre" required placeholder="Tu nombre completo">
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" name="email" required placeholder="tu@email.com">
+        </div>
+        <div class="form-group">
+          <label>¿En qué punto estás ahora mismo? *</label>
+          <textarea name="situacion" required placeholder="Cuéntame dónde estás, qué haces, qué nivel tienes y qué quieres conseguir. Sé específico."></textarea>
+        </div>
+        <div class="form-group">
+          <label>¿Por qué crees que necesitas una mentoría y no simplemente los cursos? *</label>
+          <textarea name="por_que" required placeholder="Esta pregunta es importante. Piénsala antes de responder."></textarea>
+        </div>
+        <div class="form-group">
+          <label>¿Cuánto tiempo a la semana puedes dedicar a practicar? *</label>
+          <input type="text" name="tiempo" required placeholder="Ej: 5 horas semanales">
+        </div>
+
+        <button type="submit" class="btn-submit">Enviar solicitud</button>
+      </form>
+
+      <div class="o-whatsapp">
+        O escríbeme directamente por <a href="https://wa.me/34604906631?text=Hola%20Juan%20Jos%C3%A9%2C%20me%20interesa%20la%20mentor%C3%ADa%20privada" target="_blank">WhatsApp</a> si prefieres.
+      </div>
+    </div>
+
+  </div>
+  <footer>© Academia Encuadre — academiaencuadre.com</footer>
+</body>
+</html>
