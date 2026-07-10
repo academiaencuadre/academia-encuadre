@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Becas — Academia Encuadre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", sans-serif; background: #f8fafc; color: #1a1a1a; }
+    .navbar { background: #1d3557; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { color: white; font-weight: 800; font-size: 1.1rem; text-decoration: none; }
+    .logo span { color: #e63946; }
+    .btn-back { color: #94a3b8; font-size: 0.85rem; text-decoration: none; }
+    .hero { background: #1d3557; color: white; padding: 4rem 2rem; text-align: center; }
+    .badge { display: inline-block; background: #e63946; color: white; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 999px; margin-bottom: 1.2rem; }
+    .hero h1 { font-family: "Playfair Display", serif; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+    .hero p { color: #94a3b8; max-width: 580px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+    .plazas { background: #e63946; color: white; text-align: center; padding: 0.8rem; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; }
+    .incluye-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 2.5rem; }
+    @media(max-width:640px){ .incluye-grid { grid-template-columns: 1fr; } }
+    .incluye-item { background: white; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .incluye-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+    .incluye-titulo { font-weight: 700; color: #1d3557; margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .incluye-desc { color: #64748b; font-size: 0.82rem; line-height: 1.5; }
+    .form-section { background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
+    .form-section h3 { font-size: 1.2rem; font-weight: 700; color: #1d3557; margin-bottom: 0.4rem; }
+    .form-desc { color: #64748b; font-size: 0.88rem; margin-bottom: 1.5rem; line-height: 1.6; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media(max-width:640px){ .form-row { grid-template-columns: 1fr; } }
+    label { display: block; font-size: 0.85rem; font-weight: 600; color: #374151; margin-bottom: 0.4rem; }
+    input, textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-family: inherit; color: #1a1a1a; outline: none; }
+    input:focus, textarea:focus { border-color: #1d3557; }
+    textarea { resize: vertical; min-height: 120px; }
+    .btn-submit { width: 100%; background: #e63946; color: white; border: none; padding: 1rem; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 0.5rem; }
+    .btn-submit:hover { background: #c1121f; }
+    .privacidad { font-size: 0.75rem; color: #94a3b8; text-align: center; margin-top: 0.8rem; }
+    footer { text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Academia <span>Encuadre</span></a>
+    <a href="index.html" class="btn-back">← Volver</a>
+  </nav>
+
+  <div class="plazas">🔴 Solo 5 becas disponibles — España y Latinoamérica</div>
+
+  <div class="hero">
+    <span class="badge">Talento sin límites</span>
+    <h1>Becas Academia Encuadre</h1>
+    <p>Si tienes pasión por el audiovisual, ganas de aprender y no tienes recursos económicos, esta beca existe para ti. Porque el talento no debería tener barreras.</p>
+  </div>
+
+  <div class="container">
+
+    <div class="incluye-grid">
+      <div class="incluye-item">
+        <div class="incluye-icon">🎓</div>
+        <div class="incluye-titulo">3 cursos completos</div>
+        <div class="incluye-desc">Acceso total a todos los cursos de Academia Encuadre</div>
+      </div>
+      <div class="incluye-item">
+        <div class="incluye-icon">🎯</div>
+        <div class="incluye-titulo">Mentoría inicial</div>
+        <div class="incluye-desc">Sesión personalizada para arrancar en la dirección correcta</div>
+      </div>
+      <div class="incluye-item">
+        <div class="incluye-icon">📅</div>
+        <div class="incluye-titulo">Seguimiento a los 15 días</div>
+        <div class="incluye-desc">Segunda sesión para revisar tu progreso y resolver dudas</div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>Solicitar la beca</h3>
+      <p class="form-desc">Rellena el formulario con honestidad. No buscamos historias perfectas, buscamos personas reales con ganas reales. Tu situación personal es confidencial — solo la leerá Juan José.</p>
+
+      <form action="https://formspree.io/f/xgojgrgo" method="POST">
+        <input type="hidden" name="_subject" value="Solicitud de Beca — Academia Encuadre">
+        <input type="hidden" name="tipo" value="BECA">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre completo *</label>
+            <input type="text" name="nombre" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label>País *</label>
+            <input type="text" name="pais" required placeholder="España / México / ...">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email de contacto *</label>
+          <input type="email" name="email" required placeholder="tu@email.com">
+        </div>
+
+        <div class="form-group">
+          <label>Enlace a tu vídeo de motivación en YouTube *</label>
+          <input type="url" name="video_motivacion" required placeholder="https://youtu.be/...">
+        </div>
+
+        <div class="form-group">
+          <label>Enlace a un trabajo audiovisual tuyo *</label>
+          <input type="url" name="trabajo_audiovisual" required placeholder="https://youtu.be/... o enlace a tu trabajo">
+        </div>
+
+        <div class="form-group">
+          <label>Tu situación personal (confidencial — solo lo leerá Juan José) *</label>
+          <textarea name="situacion_personal" required placeholder="Cuéntame tu situación con honestidad. Por qué necesitas esta beca y qué harías con ella."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Enviar solicitud</button>
+        <p class="privacidad">🔒 Tu situación personal es estrictamente confidencial y no se publicará en ningún lugar</p>
+      </form>
+    </div>
+
+  </div>
+  <footer>© Academia Encuadre — academiaencuadre.com</footer>
+</body>
+</html>
