@@ -713,6 +713,47 @@ a { text-decoration: none; color: inherit; }
   color: var(--texto-suave);
 }
 
+/* CURSOS GRID SECUNDARIO (gratuito) */
+.cursos-grid-secondary {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--borde);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+  justify-content: center;
+  opacity: 0.85;
+}
+.cursos-grid-secondary::before {
+  content: "También disponible";
+  display: block;
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  margin-bottom: 8px;
+}
+.curso-badge-new {
+  background: #f59e0b !important;
+  color: #fff !important;
+}
+.curso-badge-free {
+  background: #6b7280 !important;
+  color: #fff !important;
+}
+.precio-gratis {
+  color: #6b7280 !important;
+}
+.curso-card-free .btn-secondary {
+  border-color: #6b7280;
+  color: #6b7280;
+}
+.curso-card-free .btn-secondary:hover {
+  background: #6b7280;
+  color: #fff;
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .cursos-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
