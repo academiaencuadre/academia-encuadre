@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lenguaje Visual y Creativo — Academia Encuadre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", sans-serif; background: #f8fafc; color: #1a1a1a; }
+    .navbar { background: #1d3557; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { color: white; font-weight: 800; font-size: 1.1rem; text-decoration: none; }
+    .logo span { color: #e63946; }
+    .btn-back { color: #94a3b8; font-size: 0.85rem; text-decoration: none; }
+
+    .hero { background: #1d3557; color: white; padding: 5rem 2rem 4rem; }
+    .hero-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    @media(max-width:640px){ .hero-inner { grid-template-columns: 1fr; } }
+    .badge { display: inline-block; background: #e63946; color: white; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 999px; margin-bottom: 1rem; }
+    .hero h1 { font-family: "Playfair Display", serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.2; margin-bottom: 1rem; }
+    .hero p { color: #94a3b8; line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .hero-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat strong { display: block; font-size: 1.4rem; font-weight: 800; color: white; }
+    .stat span { font-size: 0.75rem; color: #64748b; }
+    .hero-cta { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 2rem; }
+    .precio-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 0.4rem; }
+    .precio { font-size: 2.5rem; font-weight: 900; color: white; margin-bottom: 0.2rem; }
+    .precio-desc { font-size: 0.82rem; color: #64748b; margin-bottom: 1.5rem; }
+    .btn-comprar { display: block; text-align: center; background: #e63946; color: white; padding: 1rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1rem; margin-bottom: 0.8rem; }
+    .btn-comprar:hover { background: #c1121f; }
+    .garantia { font-size: 0.75rem; color: #64748b; text-align: center; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
+
+    .para-quien { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 4rem; }
+    @media(max-width:640px){ .para-quien { grid-template-columns: 1fr; } }
+    .pq-card { background: white; border-radius: 16px; padding: 1.8rem; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+    .pq-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; color: #1d3557; }
+    .pq-list { list-style: none; }
+    .pq-list li { padding: 0.4rem 0; font-size: 0.88rem; color: #475569; border-bottom: 1px solid #f1f5f9; display: flex; gap: 0.5rem; }
+    .pq-list li:last-child { border-bottom: none; }
+
+    .section-title { text-align: center; margin-bottom: 2.5rem; }
+    .section-title h2 { font-family: "Playfair Display", serif; font-size: 1.8rem; color: #1d3557; margin-bottom: 0.5rem; }
+    .section-title p { color: #64748b; font-size: 0.92rem; }
+
+    .modulos { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 4rem; }
+    .modulo { background: white; border-radius: 14px; padding: 1.8rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); display: grid; grid-template-columns: 60px 1fr; gap: 1.5rem; align-items: start; }
+    .modulo-num { width: 50px; height: 50px; background: #1d3557; color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; flex-shrink: 0; }
+    .modulo-semana { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #e63946; margin-bottom: 0.3rem; }
+    .modulo h3 { font-size: 1.05rem; font-weight: 700; color: #1d3557; margin-bottom: 0.8rem; }
+    .modulo-contenidos { list-style: none; }
+    .modulo-contenidos li { font-size: 0.85rem; color: #64748b; padding: 0.25rem 0; padding-left: 1rem; position: relative; }
+    .modulo-contenidos li::before { content: "→"; position: absolute; left: 0; color: #e63946; font-size: 0.75rem; }
+    .modulo-tag { display: inline-block; background: #f0f4ff; color: #1d3557; font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 999px; margin-top: 0.8rem; }
+
+    .herramientas { background: #1d3557; border-radius: 16px; padding: 2.5rem; margin-bottom: 4rem; }
+    .herramientas h3 { color: white; font-size: 1.2rem; margin-bottom: 1.5rem; text-align: center; }
+    .herr-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+    @media(max-width:500px){ .herr-grid { grid-template-columns: 1fr 1fr; } }
+    .herr-item { background: rgba(255,255,255,0.08); border-radius: 10px; padding: 1rem; text-align: center; }
+    .herr-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+    .herr-name { color: white; font-size: 0.85rem; font-weight: 600; }
+    .herr-desc { color: #64748b; font-size: 0.72rem; margin-top: 0.2rem; }
+
+    .evaluacion { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 4rem; }
+    .evaluacion h3 { font-size: 1.1rem; font-weight: 700; color: #1d3557; margin-bottom: 1rem; }
+    .eval-item { display: flex; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid #f1f5f9; align-items: start; }
+    .eval-item:last-child { border-bottom: none; }
+    .eval-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .eval-texto strong { display: block; font-size: 0.9rem; color: #1d3557; margin-bottom: 0.2rem; }
+    .eval-texto p { font-size: 0.83rem; color: #64748b; line-height: 1.5; }
+
+    .cta-final { background: #e63946; border-radius: 16px; padding: 3rem 2rem; text-align: center; color: white; }
+    .cta-final h2 { font-family: "Playfair Display", serif; font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .cta-final p { opacity: 0.85; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .btn-cta { display: inline-block; background: white; color: #e63946; padding: 1rem 2.5rem; border-radius: 8px; font-weight: 800; text-decoration: none; font-size: 1rem; }
+
+    footer { text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Academia <span>Encuadre</span></a>
+    <a href="index.html" class="btn-back">← Volver</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="badge">Curso Online</span>
+        <h1>Lenguaje Visual y Creativo</h1>
+        <p>Aprende a contar historias visuales impactantes con solo tu móvil y CapCut. Sin experiencia previa. Sin equipos profesionales. Solo creatividad y método.</p>
+        <div class="hero-stats">
+          <div class="stat"><strong>8</strong><span>Semanas</span></div>
+          <div class="stat"><strong>6</strong><span>Módulos</span></div>
+          <div class="stat"><strong>3h</strong><span>por semana</span></div>
+          <div class="stat"><strong>100%</strong><span>Online</span></div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <div class="precio-label">Precio del curso</div>
+        <div class="precio">87€</div>
+        <div class="precio-desc">Acceso de por vida · Actualizaciones incluidas</div>
+        <a href="https://jamonpay.gumroad.com" class="btn-comprar" target="_blank">Inscribirme ahora</a>
+        <div class="garantia">🔒 Pago seguro · Sin suscripciones</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="para-quien">
+      <div class="pq-card">
+        <h3>✅ Este curso es para ti si...</h3>
+        <ul class="pq-list">
+          <li>✓ Quieres crear contenido visual de calidad</li>
+          <li>✓ Solo tienes un móvil y ganas de aprender</li>
+          <li>✓ No tienes experiencia previa en vídeo</li>
+          <li>✓ Quieres entender por qué algunas imágenes impactan</li>
+          <li>✓ Buscas un método práctico, no teoría vacía</li>
+        </ul>
+      </div>
+      <div class="pq-card">
+        <h3>📱 Lo único que necesitas</h3>
+        <ul class="pq-list">
+          <li>✓ Un smartphone (Android o iOS)</li>
+          <li>✓ App CapCut (gratuita)</li>
+          <li>✓ App Snapseed (gratuita)</li>
+          <li>✓ 3 horas semanales de dedicación</li>
+          <li>✓ Ganas de experimentar y crear</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <span class="badge" style="background:#1d3557;">Programa del curso</span>
+      <h2>6 módulos. 8 semanas. Resultado real.</h2>
+      <p>Teoría aplicada inmediatamente en práctica. Sin relleno.</p>
+    </div>
+
+    <div class="modulos">
+
+      <div class="modulo">
+        <div class="modulo-num">01</div>
+        <div>
+          <div class="modulo-semana">Semana 1-2</div>
+          <h3>Introducción al Lenguaje Visual</h3>
+          <ul class="modulo-contenidos">
+            <li>Principios básicos del lenguaje visual</li>
+            <li>Técnicas de encuadre y composición con móvil</li>
+            <li>Primeros pasos con CapCut: edición básica y montaje</li>
+            <li>Proyecto: tu primera composición visual</li>
+          </ul>
+          <span class="modulo-tag">📹 Tutorial pregrabado + práctica autodirigida</span>
+        </div>
+      </div>
+
+      <div class="modulo">
+        <div class="modulo-num">02</div>
+        <div>
+          <div class="modulo-semana">Semana 2-3</div>
+          <h3>Figuras Retóricas Aplicadas al Contenido</h3>
+          <ul class="modulo-contenidos">
+            <li>Metáfora, simbolismo y alegoría visual</li>
+            <li>Cómo contar historias poderosas con recursos mínimos</li>
+            <li>Micro historias visuales: estructura y ejecución</li>
+            <li>Proyecto: crea una micro historia en 60 segundos</li>
+          </ul>
+          <span class="modulo-tag">📹 Tutorial pregrabado + sesión en vivo</span>
+        </div>
+      </div>
+
+      <div class="modulo">
+        <div class="modulo-num">03</div>
+        <div>
+          <div class="modulo-semana">Semana 3-4</div>
+          <h3>Teoría del Color y Psicología Visual</h3>
+          <ul class="modulo-contenidos">
+            <li>Fundamentos de la teoría del color</li>
+            <li>Paletas de color en CapCut: cómo aplicarlas</li>
+            <li>El color como herramienta emocional</li>
+            <li>Proyecto: edita un vídeo cambiando solo el color</li>
+          </ul>
+          <span class="modulo-tag">📹 Tutorial pregrabado + práctica autodirigida</span>
+        </div>
+      </div>
+
+      <div class="modulo">
+        <div class="modulo-num">04</div>
+        <div>
+          <div class="modulo-semana">Semana 4-5</div>
+          <h3>Neurociencia Aplicada a la Imagen</h3>
+          <ul class="modulo-contenidos">
+            <li>Cómo procesa el cerebro las imágenes y el color</li>
+            <li>Principios neurocientíficos para captar atención</li>
+            <li>Diseñar para la percepción, no para la estética</li>
+            <li>Proyecto: escena diseñada con principios neurocientíficos</li>
+          </ul>
+          <span class="modulo-tag">📹 Tutorial pregrabado + sesión en vivo</span>
+        </div>
+      </div>
+
+      <div class="modulo">
+        <div class="modulo-num">05</div>
+        <div>
+          <div class="modulo-semana">Semana 5-6</div>
+          <h3>Composición Avanzada y Personajes</h3>
+          <ul class="modulo-contenidos">
+            <li>Desarrollo de personajes con enfoque visual</li>
+            <li>Composiciones avanzadas con CapCut</li>
+            <li>Cómo dirigir la mirada del espectador</li>
+            <li>Taller: crea un personaje y una escena completa</li>
+          </ul>
+          <span class="modulo-tag">🎬 Taller práctico intensivo</span>
+        </div>
+      </div>
+
+      <div class="modulo">
+        <div class="modulo-num">06</div>
+        <div>
+          <div class="modulo-semana">Semana 7-8</div>
+          <h3>Color Creativo y Proyecto Final</h3>
+          <ul class="modulo-contenidos">
+            <li>Manchas de color y atmósferas visuales</li>
+            <li>Contraste, saturación y edición creativa</li>
+            <li>Integración de todos los elementos aprendidos</li>
+            <li>Proyecto final: vídeo completo con todos los conceptos</li>
+          </ul>
+          <span class="modulo-tag">🏆 Proyecto final evaluado</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="herramientas">
+      <h3>Herramientas que usarás (todas gratuitas)</h3>
+      <div class="herr-grid">
+        <div class="herr-item">
+          <div class="herr-icon">🎬</div>
+          <div class="herr-name">CapCut</div>
+          <div class="herr-desc">Edición de vídeo principal</div>
+        </div>
+        <div class="herr-item">
+          <div class="herr-icon">📸</div>
+          <div class="herr-name">Snapseed</div>
+          <div class="herr-desc">Edición de fotografía</div>
+        </div>
+        <div class="herr-item">
+          <div class="herr-icon">🎨</div>
+          <div class="herr-name">Canva</div>
+          <div class="herr-desc">Gráficos y diseño</div>
+        </div>
+        <div class="herr-item">
+          <div class="herr-icon">✨</div>
+          <div class="herr-name">Adobe Express</div>
+          <div class="herr-desc">Contenido visual rápido</div>
+        </div>
+        <div class="herr-item">
+          <div class="herr-icon">📱</div>
+          <div class="herr-name">InShot</div>
+          <div class="herr-desc">Edición móvil adicional</div>
+        </div>
+        <div class="herr-item">
+          <div class="herr-icon">📷</div>
+          <div class="herr-name">Tu móvil</div>
+          <div class="herr-desc">Tu cámara principal</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="evaluacion">
+      <h3>¿Cómo se evalúa el curso?</h3>
+      <div class="eval-item">
+        <div class="eval-icon">🎯</div>
+        <div class="eval-texto">
+          <strong>Actividad intermedia (semana 4)</strong>
+          <p>Vídeo de 30 segundos aplicando uno de los conceptos clave de las primeras semanas. Recibes feedback antes del proyecto final.</p>
+        </div>
+      </div>
+      <div class="eval-item">
+        <div class="eval-icon">🏆</div>
+        <div class="eval-texto">
+          <strong>Proyecto final (semana 8)</strong>
+          <p>Vídeo completo que integra lenguaje visual, teoría del color, figuras retóricas y composición. Evaluado por creatividad, coherencia y aplicación de los conceptos.</p>
+        </div>
+      </div>
+      <div class="eval-item">
+        <div class="eval-icon">📜</div>
+        <div class="eval-texto">
+          <strong>Certificado de finalización</strong>
+          <p>Al completar el proyecto final recibes tu certificado de Academia Encuadre.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-final">
+      <h2>Empieza a ver diferente</h2>
+      <p>8 semanas. Tu móvil. Un método. Todo lo que necesitas para crear contenido visual que de verdad impacta.</p>
+      <a href="https://jamonpay.gumroad.com" class="btn-cta" target="_blank">Inscribirme — 87€</a>
+    </div>
+
+  </div>
+
+  <footer>© Academia Encuadre — academiaencuadre.com</footer>
+</body>
+</html>
