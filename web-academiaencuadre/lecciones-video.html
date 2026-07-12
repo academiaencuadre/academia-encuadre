@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecciones en Vídeo — Streaming Profesional | Academia Encuadre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", sans-serif; background: #f8fafc; color: #1a1a1a; }
+
+    .navbar { background: #1d3557; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { color: white; font-weight: 800; font-size: 1.1rem; text-decoration: none; }
+    .logo span { color: #e63946; }
+    .btn-back { color: #94a3b8; font-size: 0.85rem; text-decoration: none; }
+    .btn-back:hover { color: white; }
+
+    .hero { background: #1d3557; color: white; padding: 4rem 2rem; text-align: center; }
+    .hero .badge { display: inline-block; background: #e63946; color: white; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 999px; margin-bottom: 1.2rem; }
+    .hero h1 { font-family: "Playfair Display", serif; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+    .hero p { color: #94a3b8; max-width: 560px; margin: 0 auto 1.5rem; font-size: 1rem; line-height: 1.7; }
+    .hero .aviso { background: rgba(230,57,70,0.15); border: 1px solid rgba(230,57,70,0.3); border-radius: 8px; display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.85rem; color: #fca5a5; margin-top: 0.5rem; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
+
+    .leccion { background: white; border-radius: 16px; box-shadow: 0 2px 20px rgba(0,0,0,0.07); margin-bottom: 3rem; overflow: hidden; }
+    .leccion-header { padding: 1.8rem 2rem 0; }
+    .leccion-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #e63946; margin-bottom: 0.4rem; }
+    .leccion-titulo { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.6rem; color: #1d3557; }
+    .leccion-desc { color: #64748b; font-size: 0.95rem; line-height: 1.7; padding-bottom: 1.5rem; }
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; }
+    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+    .cta { background: #1d3557; border-radius: 16px; padding: 3rem 2rem; text-align: center; margin-top: 1rem; }
+    .cta h2 { color: white; font-size: 1.6rem; margin-bottom: 0.8rem; }
+    .cta p { color: #94a3b8; margin-bottom: 2rem; font-size: 0.95rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta .btn { display: inline-block; background: #e63946; color: white; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1rem; }
+    .cta .btn:hover { background: #c1121f; }
+    .cta .lock { font-size: 0.8rem; color: #64748b; margin-top: 1rem; }
+
+    footer { text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">Academia <span>Encuadre</span></a>
+    <a href="index.html" class="btn-back">← Volver</a>
+  </nav>
+
+  <div class="hero">
+    <span class="badge">Curso Streaming Profesional</span>
+    <h1>Lecciones en Vídeo</h1>
+    <p>Una muestra de lo que encontrarás dentro del curso completo. Aprende a configurar tu setup de streaming desde cero.</p>
+    <div class="aviso">🔒 El curso completo incluye todos los vídeos, el PDF y casos reales</div>
+  </div>
+
+  <div class="container">
+
+    <div class="leccion">
+      <div class="leccion-header">
+        <div class="leccion-num">Lección 01</div>
+        <div class="leccion-titulo">Dominando OBS — Configuración Profesional Paso a Paso</div>
+        <div class="leccion-desc">OBS es el programa que usa todo el mundo y que casi nadie configura bien. En esta lección aprenderás a crear escenas y fuentes, configurar la tasa de bits correcta, ajustar el audio con filtros profesionales y hacer una prueba de emisión antes de cualquier evento.</div>
+      </div>
+      <div class="video-wrap">
+        <video controls preload="metadata" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          <source src="videos/06-tutorial-obs.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="leccion">
+      <div class="leccion-header">
+        <div class="leccion-num">Lección 02</div>
+        <div class="leccion-titulo">Hardware Mínimo para Streaming Profesional</div>
+        <div class="leccion-desc">No necesitas gastar mucho — necesitas gastar bien. En esta lección verás qué ordenador, cámara, capturadora, micrófono y conexión necesitas realmente para empezar a cobrar por tus directos. Sin relleno, solo lo que funciona en eventos reales.</div>
+      </div>
+      <div class="video-wrap">
+        <video controls preload="metadata" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          <source src="videos/07-tutorial-hardware.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="cta">
+      <h2>¿Quieres ver el curso completo?</h2>
+      <p>Accede a todos los vídeos, el PDF descargable y los casos reales de eventos profesionales.</p>
+      <a href="streaming_total.pdf" class="btn">⬇ Descarga la guía completa gratis</a>
+      <div class="lock">🔒 Próximamente: acceso al curso completo en vídeo</div>
+    </div>
+
+  </div>
+
+  <footer>© Academia Encuadre — academiaencuadre.com</footer>
+
+</body>
+</html>
