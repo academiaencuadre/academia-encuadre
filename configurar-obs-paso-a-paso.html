@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurar OBS paso a paso para streaming profesional — Academia Encuadre</title>
+  <meta name="description" content="Configura OBS Studio correctamente: escenas y fuentes, bitrate según tu conexión, filtros de audio y prueba de emisión antes de salir en directo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", sans-serif; background: #f8fafc; color: #1a1a1a; line-height: 1.9; }
+    .navbar { background: #1d3557; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { color: white; font-weight: 800; font-size: 1.1rem; text-decoration: none; }
+    .logo span { color: #e63946; }
+    .btn-back { color: #94a3b8; font-size: 0.85rem; text-decoration: none; }
+    .container { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+    .badge { display: inline-block; background: #e63946; color: white; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 999px; margin-bottom: 1rem; }
+    h1 { font-family: "Playfair Display", serif; color: #1d3557; font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.3; margin-bottom: 1rem; }
+    h2 { color: #1d3557; font-size: 1.25rem; margin: 2.2rem 0 0.6rem; }
+    p, li { color: #374151; font-size: 1rem; }
+    ul, ol { margin: 0.5rem 0 1rem 1.2rem; }
+    .caja { background: #f0f4ff; border-left: 4px solid #1d3557; padding: 1.2rem 1.5rem; margin: 1.8rem 0; }
+    .caja p { font-style: italic; }
+    .cta { background: #1d3557; border-radius: 16px; padding: 2.5rem; text-align: center; margin-top: 3rem; }
+    .cta h2 { color: white; margin-top: 0; }
+    .cta p { color: #94a3b8; margin-bottom: 1.5rem; }
+    .cta a { display: inline-block; background: #e63946; color: white; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; margin: 0 0.4rem 0.6rem; }
+    footer { text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem; }
+    footer a { color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Academia <span>Encuadre</span></a>
+    <a href="index.html" class="btn-back">← Volver</a>
+  </nav>
+
+  <div class="container">
+    <span class="badge">Blog · OBS</span>
+    <h1>Configurar OBS paso a paso (lo que casi nadie hace bien)</h1>
+
+    <p>OBS Studio es gratis, potente y… está mal configurado en la mayoría de directos que veo. No por falta de tutoriales, sino porque casi todos saltan a los efectos antes de dominar las bases. Esta es la configuración que uso en eventos reales.</p>
+
+    <h2>1. Escenas y fuentes: la base de todo</h2>
+    <p>Crea una escena por momento del evento: <em>Presentación, Cámara, Pantalla compartida, Descanso</em>. Dentro de cada escena, ordena las fuentes de arriba abajo: lo que está más arriba en la lista se dibuja encima. Los rótulos y overlays van arriba; la cámara, abajo.</p>
+
+    <h2>2. Bitrate según tu conexión</h2>
+    <ul>
+      <li><strong>1080p a 30 fps</strong>: 4.500–6.000 kbps es suficiente para la mayoría de eventos.</li>
+      <li><strong>720p a 30 fps</strong>: 2.500–4.000 kbps, ideal si tu subida es limitada.</li>
+      <li>Regla: emite al <strong>50-60 % de tu velocidad de subida real</strong> (haz un test antes), nunca al límite.</li>
+      <li>Si la plataforma lo permite, activa el modo "rendimiento constante" en vez de "calidad constante".</li>
+    </ul>
+
+    <h2>3. Audio con filtros (el salto profesional)</h2>
+    <p>En el mezclador de audio, clic derecho sobre tu micrófono → <strong>Filtros</strong> y añade, en este orden:</p>
+    <ol>
+      <li><strong>Supresión de ruido</strong> (RNNoise, sin pasarse).</li>
+      <li><strong>Compresor</strong>: relación 3:1, ataque rápido — evita que los gritos saturen.</li>
+      <li><strong>Limitador</strong> a -1 dB como techo de seguridad.</li>
+    </ol>
+    <p>Después, en el mezclador, ajusta niveles para que la voz se mueva entre -12 y -6 dB. El micrófono a -12 dB bien procesado suena mejor que a -1 dB saturado.</p>
+
+    <h2>4. La prueba de emisión que salva eventos</h2>
+    <div class="caja">
+      <p>Antes de cada directo: emite en privado (o graba) 5 minutos con el mismo ordenador, la misma cámara y la misma red del evento. Revisa el vídeo resultante: audio, sincronía, caídas de frames. Cinco minutos de prueba evitan cinco horas de crisis.</p>
+    </div>
+
+    <p>Un extra: guarda tu perfil y colección de escenas en OBS (Perfil → Exportar). El día del evento, en otro equipo, las restauras en segundos.</p>
+
+    <div class="cta">
+      <h2>Configuración completa + casos reales</h2>
+      <p>La guía gratuita de streaming profesional incluye OBS a fondo, hardware mínimo y checklist pre-evento.</p>
+      <a href="descarga-guia.html">⬇ Descargar guía gratis</a>
+      <a href="index.html#cursos">Ver cursos</a>
+    </div>
+
+    <p style="margin-top:2rem;">Más artículos: <a href="como-hacer-streaming-con-poco-presupuesto.html">Streaming con poco presupuesto</a> · <a href="que-camara-para-streaming.html">¿Qué cámara elegir?</a></p>
+  </div>
+
+  <footer>© Academia Encuadre — <a href="index.html">academiaencuadre.com</a> · <a href="privacidad.html">Privacidad</a></footer>
+</body>
+</html>
